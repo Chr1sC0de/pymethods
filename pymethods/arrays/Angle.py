@@ -17,22 +17,15 @@ class Angle(np.ndarray):
     __slots__ = ['_units']
 
     def __new__(cls, value: np.float, units='degrees', **kwargs) -> object:
-        """Angle
-
-        class to control the creation of angles
-
-        Args:
-            value (np.float): float to be converted into
-                angle
-
-        Returns:
-            object: instantiated angle
+        """
         """
         out = np.asarray(value).view(cls)
         out._units = units
         return out
 
     def __init__(self, value: np.float, units='radians', **kwargs) -> None:
+        """
+        """
         if _in_radians(units):
             self._units = 'radians'
         if _in_degrees(units):
@@ -46,6 +39,8 @@ class Angle(np.ndarray):
 
     @property
     def rad(self) -> object:
+        """
+        """
         if self.units != 'radians':
             return Angle(self*np.pi/180, units='radians')
         if self.units == 'radians':
@@ -53,6 +48,8 @@ class Angle(np.ndarray):
 
     @property
     def deg(self) -> object:
+        """
+        """
         if self.units != 'degrees':
             return Angle(self*180/np.pi, units='degrees')
         if self.units == 'degrees':
@@ -60,11 +57,15 @@ class Angle(np.ndarray):
 
     @classmethod
     def deg_to_rad(cls, degrees: object) -> object:
+        """
+        """
         return cls(degrees, units='degrees').rad
 
     @classmethod
     def rad_to_deg(cls, radians: object) -> object:
-        return cls(radians, units='radians').deg
+        """
+        """
+        return cls(        radians, units='radians').deg
 
     def __repr__(self):
         mem_loc = utils.hex_memory(self)

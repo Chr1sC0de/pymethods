@@ -22,7 +22,6 @@ class SplineFunc:
 
 
 class Curve(arrays.Vectorspace):
-
     mode = 'fraction'
 
     delta = utils.NoInputFunctionAlias('delta_per_point', store=True)

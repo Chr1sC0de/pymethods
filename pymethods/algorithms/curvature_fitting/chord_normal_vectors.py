@@ -55,17 +55,17 @@ def can_lsq_fit(
         n_processors=None, eps=1e7) -> typing.Iterable[np.ndarray]:
     """can_lsq_fit
 
-    A python implementation of Curvature Estimation of 3D Point Cloud Surfaces
-    Through the Fitting of NormalSection Curvatures
-    http://www.nlpr.ia.ac.cn/2008papers/gjhy/gh129.pdf
+        A python implementation of Curvature Estimation of 3D Point Cloud Surfaces
+        Through the Fitting of NormalSection Curvatures
+        http://www.nlpr.ia.ac.cn/2008papers/gjhy/gh129.pdf
 
-    Args:
-        main_array (np.ndarray): pointcloud array 3xN
-        adj_list (np.ndarray): adjacency list NxKNN
-        point_basis (np.ndarray): Nx3x3
+        Args:
+            main_array (np.ndarray): pointcloud array 3xN
+            adj_list (np.ndarray): adjacency list NxKNN
+            point_basis (np.ndarray): Nx3x3
 
-    Returns:
-        typing.Iterable[np.ndarray]: principle_curvatures, principle_directions
+        Returns:
+            typing.Iterable[np.ndarray]: principle_curvatures, principle_directions
     """
     # initialize the principle curvatures and directions
     # the nn_points the nn normals and the XY points

@@ -1,4 +1,4 @@
 .vscode/
 pymethodsEnv/
 __pycache__/
-__build/
+_build/

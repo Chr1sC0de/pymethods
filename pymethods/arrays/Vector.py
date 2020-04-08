@@ -37,20 +37,6 @@ class Vector(np.ndarray):
 
     def __new__(
             cls, *args, column=False, **kwargs: dict) -> object:
-        """__new__
-
-        Vector object creation
-        Args:
-            *args: args is a variable argument. It
-                can either be an iterable or a
-                tuple containing a single list. i.e. a
-                Vectors object can be instantiated
-                eiter by V = Vector(1, 2, 3) or
-                V = Vector([1, 2, 3])
-        Returns:
-            Vector: [description]
-        """
-
         if len(args) == 1:
             if isinstance(args[0], Iterable):
                 out = cls._parse_single_arg(args[0])
@@ -76,6 +62,8 @@ class Vector(np.ndarray):
                     self.__class__ = Array
 
     def make_3d(self):
+        """make_3d
+        """
         if self.shape[0] < 3:
             return self.__class__(math.make_3d(self))
         elif self.shape[0] > 3:
@@ -84,30 +72,12 @@ class Vector(np.ndarray):
 
     def rotation_matrix(self, phi: np.float, units='radians') -> np.ndarray:
         """rotation_matrix
-
-        get the rotation matrix for angle phi around self
-
-        Args:
-            phi (np.float): rotation angle in units
-            units (str, optional): ['radians' or 'degrees'].
-                Defaults to 'radians'.
-
-        Returns:
-            np.ndarray: Rotation matrix
         """
         phi = Angle(phi, units=units).rad
         return math.rotation_matrix(self, phi)
 
     def direct_vector(self, vector: np.ndarray) -> np.ndarray:
         """direct_vector
-
-        Point the current vector in the same direction as a secondary vector
-
-        Args:
-            vector (np.ndarray): vector to point in the same direction to
-
-        Returns:
-            np.ndarray: re-oriented vector
         """
         self_project = math.vector_project(self, vector)
 
@@ -122,55 +92,83 @@ class Vector(np.ndarray):
     def rotate_around_vector(
             self, vector: np.ndarray,
             phi: np.float, units='radians') -> np.ndarray:
+        """
+        """
         phi = Angle(phi, units=units).rad
         R = math.rotation_matrix(vector, phi)
         return R @ self
 
     def make_column(self):
+        """
+        """
         if utils.len_shape(self) == 1:
             return self[:, None]
         return self
 
     def normalize(self):
+        """
+        """
         return math.normalize(self)
 
     def magnitude(self):
+        """
+        """
         return math.l2_norm(self).squeeze()
 
     def scalar_project(self, vector: np.ndarray) -> np.ndarray:
+        """
+        """
         projected = math.scalar_project(self, vector)
         return projected
 
     def vector_project(self, vector: np.ndarray) -> np.ndarray:
+        """vector projection of self onto input
+        """
         return math.vector_project(self, vector)
 
     def perpendicular(self, vector: np.ndarray) -> np.ndarray:
+        """
+        """
         return math.vector_perpendicular(self, vector)
 
     def project_to_plane(self, normal: np.ndarray) -> np.ndarray:
+        """
+        """
         return self.__class__(math.project_to_plane(self, normal))
 
     def change_reference_frame(self, basis: np.ndarray) -> np.ndarray:
+        """
+        """
         return self.scalar_project(basis)
 
     def dot(self, basis: np.ndarray) -> Union[np.ndarray, np.float]:
         return math.dot(self, basis)
 
     def cross(self, vector: np.ndarray) -> np.ndarray:
+        """
+        """
         return math.cross(self, vector)
 
-    def angle(self, vector: np.ndarray) -> Union[np.ndarray, np.float]:
+    def angle(self, vector: np.ndarray):
+        """
+        """
         return Angle(math.smallest_angle_between_vectors(self, vector))
 
     def directed_angle(
             self, vector: np.ndarray,
             direction: np.ndarray) -> Union[np.ndarray, np.float]:
+        """
+        """
         return Angle(math.directed_angle(self, vector, direction))
 
     def skew_symmetric(self):
+        """
+        """
         return math.skew_symmetric_3d(self)
 
     def as_numpy(self):
+        """
+        """
         return self.view(np.ndarray)
 
     # ----------- PLOTTING FUNCTIONS ------------------------------------------
@@ -181,7 +179,8 @@ class Vector(np.ndarray):
             arrow_size='scaled', line_kwargs=None, name='Vector',
             showlegend=False
             ):
-
+        """
+        """
         if origin is None:
             origin = np.zeros(3)
 
@@ -239,7 +238,8 @@ class Vector(np.ndarray):
 
     def scatterly(
             self, *args, fig=None, color="black", showlegend=False, **kwargs):
-
+        """
+        """
         import plotly.graph_objs as go
 
         if fig is None:
@@ -271,12 +271,18 @@ class Vector(np.ndarray):
         return fig, obj
 
     def scatter3d(self, *args, **kwargs):
+        """
+        """
         return pyplot.scatter3d(*self, *args, **kwargs)
 
     def scatter2d(self, *args, **kwargs):
+        """
+        """
         return pyplot.scatter(*self[0:2], *args, **kwargs)
 
     def quiver2d(self, *args, origin=None, **kwargs):
+        """
+        """
         if origin is None:
             origin = np.zeros_like(self)
         else:
@@ -287,9 +293,13 @@ class Vector(np.ndarray):
         return pyplot.gcf(), pyplot.gca(), obj
 
     def plot3d(self, *args, **kwargs):
+        """
+        """
         return pyplot.plot3d(*self, *args, **kwargs)
 
     def quiver3d(self, *args, origin=None, **kwargs):
+        """
+        """
         if origin is None:
             origin = np.zeros_like(self)
         else:
@@ -300,6 +310,8 @@ class Vector(np.ndarray):
         return f, ax, obj
 
     def to_vtk(self, method='pyvista', origin=[0,0,0]):
+        """
+        """
         if method == 'pyvista':
             output = pv.PolyData(origin)
             output.vector = self.T
@@ -307,7 +319,9 @@ class Vector(np.ndarray):
 
 
 class ColumnVector(Vector):
-    def __new__(cls, *args, **kwargs: dict) -> object:
+    """
+    """
+    def __new__(cls    , *args, **kwargs: dict) -> object:
         return super(ColumnVector, cls).__new__(
             cls, *args, column=True, **kwargs)
 
