@@ -1,0 +1,7 @@
+README.md
+setup.py
+pymethods/__init__.py
+pymethods.egg-info/PKG-INFO
+pymethods.egg-info/SOURCES.txt
+pymethods.egg-info/dependency_links.txt
+pymethods.egg-info/top_level.txt
