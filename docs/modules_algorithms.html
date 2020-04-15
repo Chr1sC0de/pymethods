@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>algorithms &mdash; pymethods 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/versions.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arrays" href="modules_arrays.html" />
+    <link rel="prev" title="multiprocess" href="modules_multiprocess.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymethods
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules_parse.html">parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_ssh.html">ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_multiprocess.html">multiprocess</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#curvature-fitting">curvature_fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pymethods.algorithms.shapeModelling">shapeModelling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transfinite-interpolation">transfinite_interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pymethods.algorithms.elliptic_mesh_generation">elliptic_mesh_generation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules_arrays.html">arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_math.html">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymethods</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Modules</a> &raquo;</li>
+        
+      <li>algorithms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules_algorithms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="algorithms">
+<h1>algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pymethods.algorithms.BreadthFirstSearch">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.</code><code class="sig-name descname">BreadthFirstSearch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adjacency_list</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Iterable<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_progress</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.BreadthFirstSearch" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.algorithms.BreadthFirstSearch.adjacency_list">
+<code class="sig-name descname">adjacency_list</code><a class="headerlink" href="#pymethods.algorithms.BreadthFirstSearch.adjacency_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.BreadthFirstSearch.clean">
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.BreadthFirstSearch.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.BreadthFirstSearch.query_current_vertex">
+<code class="sig-name descname">query_current_vertex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.BreadthFirstSearch.query_current_vertex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.BreadthFirstSearch.reset_progress_bar">
+<code class="sig-name descname">reset_progress_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.BreadthFirstSearch.reset_progress_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.BreadthFirstSearch.step_progress_bar">
+<code class="sig-name descname">step_progress_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.BreadthFirstSearch.step_progress_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="curvature-fitting">
+<h2>curvature_fitting<a class="headerlink" href="#curvature-fitting" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="pymethods.algorithms.curvature_fitting.can_lsq_fit">
+<code class="sig-prename descclassname">curvature_fitting.</code><code class="sig-name descname">can_lsq_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adj_list</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">point_basis</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">n_processors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eps</span><span class="o">=</span><span class="default_value">10000000.0</span></em><span class="sig-paren">)</span> &#x2192; Iterable<span class="p">[</span>numpy.ndarray<span class="p">]</span><a class="headerlink" href="#pymethods.algorithms.curvature_fitting.can_lsq_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A python implementation of Curvature Estimation of 3D Point Cloud Surfaces
+Through the Fitting of NormalSection Curvatures
+<a class="reference external" href="http://www.nlpr.ia.ac.cn/2008papers/gjhy/gh129.pdf">http://www.nlpr.ia.ac.cn/2008papers/gjhy/gh129.pdf</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>main_array (np.ndarray): pointcloud array 3xN
+adj_list (np.ndarray): adjacency list NxKNN
+point_basis (np.ndarray): Nx3x3</p>
+</dd>
+<dt>Returns:</dt><dd><p>typing.Iterable[np.ndarray]: principle_curvatures, principle_directions</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pymethods.algorithms.shapeModelling">
+<span id="shapemodelling"></span><h2>shapeModelling<a class="headerlink" href="#module-pymethods.algorithms.shapeModelling" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.shapeModelling.</code><code class="sig-name descname">PointDistributionModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py class">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace">
+<em class="property">class </em><code class="sig-name descname">NDSpace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meanShape</span></em>, <em class="sig-param"><span class="n">alignedShapes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.U">
+<code class="sig-name descname">U</code><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.U" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.V_T">
+<code class="sig-name descname">V_T</code><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.V_T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.W">
+<code class="sig-name descname">W</code><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.W" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.recoverDimensions">
+<code class="sig-name descname">recoverDimensions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.recoverDimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.svd">
+<code class="sig-name descname">svd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modes</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.svd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.alignShapesToMean">
+<code class="sig-name descname">alignShapesToMean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shapeList</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.alignShapesToMean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modes</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">eps</span><span class="o">=</span><span class="default_value">1e-05</span></em>, <em class="sig-param"><span class="n">countCap</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">costlimit</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.generateShape">
+<code class="sig-name descname">generateShape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">C</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.generateShape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.objectiveFunction">
+<code class="sig-name descname">objectiveFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">listShapes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.objectiveFunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.postProcessBuilt">
+<code class="sig-name descname">postProcessBuilt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shapes</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.postProcessBuilt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.postProcessGenerated">
+<code class="sig-name descname">postProcessGenerated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.postProcessGenerated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.recommendedAmountModes">
+<code class="sig-name descname">recommendedAmountModes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">explainedVarReq</span><span class="o">=</span><span class="default_value">0.8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.recommendedAmountModes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.algorithms.shapeModelling.PyVistaPointDistributionModel">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.shapeModelling.</code><code class="sig-name descname">PyVistaPointDistributionModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">structured_shape</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PyVistaPointDistributionModel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PyVistaPointDistributionModel.postProcessGenerated">
+<code class="sig-name descname">postProcessGenerated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PyVistaPointDistributionModel.postProcessGenerated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.algorithms.shapeModelling.CylindricalPointModel">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.shapeModelling.</code><code class="sig-name descname">CylindricalPointModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">structured_shape</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.CylindricalPointModel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.CylindricalPointModel.postProcessBuilt">
+<code class="sig-name descname">postProcessBuilt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shapes</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.CylindricalPointModel.postProcessBuilt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.CylindricalPointModel.postProcessGenerated">
+<code class="sig-name descname">postProcessGenerated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.CylindricalPointModel.postProcessGenerated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="transfinite-interpolation">
+<h2>transfinite_interpolation<a class="headerlink" href="#transfinite-interpolation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.transfinite_interpolation.</code><code class="sig-name descname">Transfinite2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span></em>, <em class="sig-param"><span class="n">refinement</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.contour">
+<em class="property">property </em><code class="sig-name descname">contour</code><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.contour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_uniform">
+<code class="sig-name descname">mesh_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">npts_U</span></em>, <em class="sig-param"><span class="n">npts_V</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_uniform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_vtk">
+<code class="sig-name descname">mesh_vtk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">U</span></em>, <em class="sig-param"><span class="n">V</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_vtk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh">
+<code class="sig-name descname">pts_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">U</span></em>, <em class="sig-param"><span class="n">V</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column">
+<code class="sig-name descname">pts_mesh_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">U</span></em>, <em class="sig-param"><span class="n">V</span></em>, <em class="sig-param"><span class="n">return_params</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column_uniform">
+<code class="sig-name descname">pts_mesh_column_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">npts_U</span></em>, <em class="sig-param"><span class="n">npts_V</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column_uniform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_uniform">
+<code class="sig-name descname">pts_mesh_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">npts_U</span></em>, <em class="sig-param"><span class="n">npts_V</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_uniform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.transfinite_interpolation.</code><code class="sig-name descname">TransfiniteCylinder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cylindrical_surface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder.mesh_vtk">
+<code class="sig-name descname">mesh_vtk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder.mesh_vtk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder.pts_mesh">
+<code class="sig-name descname">pts_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder.pts_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder.pts_mesh_column">
+<code class="sig-name descname">pts_mesh_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.TransfiniteCylinder.pts_mesh_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pymethods.algorithms.elliptic_mesh_generation">
+<span id="elliptic-mesh-generation"></span><h2>elliptic_mesh_generation<a class="headerlink" href="#module-pymethods.algorithms.elliptic_mesh_generation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pymethods.algorithms.elliptic_mesh_generation.mesh2d">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.elliptic_mesh_generation.</code><code class="sig-name descname">mesh2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mesh2d</span></em>, <em class="sig-param"><span class="n">zeta</span></em>, <em class="sig-param"><span class="n">eta</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.elliptic_mesh_generation.mesh2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.algorithms.elliptic_mesh_generation.meshStretch2d">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.algorithms.elliptic_mesh_generation.</code><code class="sig-name descname">meshStretch2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mesh2d</span></em>, <em class="sig-param"><span class="n">zeta_delta</span></em>, <em class="sig-param"><span class="n">eta_delta</span></em>, <em class="sig-param"><span class="n">zeta_orig</span></em>, <em class="sig-param"><span class="n">eta_orig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.elliptic_mesh_generation.meshStretch2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules_arrays.html" class="btn btn-neutral float-right" title="arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules_multiprocess.html" class="btn btn-neutral float-left" title="multiprocess" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chris Mamon
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        1.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

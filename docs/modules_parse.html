@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>parse &mdash; pymethods 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/versions.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="construct" href="modules_construct.html" />
+    <link rel="prev" title="Modules" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymethods
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">parse</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pymethods.parse.angiography">angiography</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pymethods.parse.ivoct">ivoct</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_ssh.html">ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_multiprocess.html">multiprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_algorithms.html">algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_arrays.html">arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_math.html">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymethods</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Modules</a> &raquo;</li>
+        
+      <li>parse</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules_parse.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pymethods.parse">
+<span id="parse"></span><h1>parse<a class="headerlink" href="#module-pymethods.parse" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pymethods.parse.angiography">
+<span id="angiography"></span><h2>angiography<a class="headerlink" href="#module-pymethods.parse.angiography" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pymethods.parse.angiography.Data">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.angiography.</code><code class="sig-name descname">Data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.parse.angiography.Data.linesToArray">
+<em class="property">classmethod </em><code class="sig-name descname">linesToArray</code><span class="sig-paren">(</span><em class="sig-param">lines</em>, <em class="sig-param">dtypeMethod=&lt;class 'float'&gt;</em>, <em class="sig-param">delimeter=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Data.linesToArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.parse.angiography.Folder">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.angiography.</code><code class="sig-name descname">Folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folderPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.BifCoreEllipseSetellipseSet">
+<code class="sig-name descname">BifCoreEllipseSetellipseSet</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.BifCoreEllipseSetellipseSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.CrossSectionEllipseSet1">
+<code class="sig-name descname">CrossSectionEllipseSet1</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.CrossSectionEllipseSet1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.CrossSectionEllipseSet2">
+<code class="sig-name descname">CrossSectionEllipseSet2</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.CrossSectionEllipseSet2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.bifCenterline1">
+<code class="sig-name descname">bifCenterline1</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.bifCenterline1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.bifCenterline2">
+<code class="sig-name descname">bifCenterline2</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.bifCenterline2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.centerline1">
+<code class="sig-name descname">centerline1</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.centerline1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.centerline2">
+<code class="sig-name descname">centerline2</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.centerline2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.clean">
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.filenames">
+<em class="property">property </em><code class="sig-name descname">filenames</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.filenames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.files">
+<em class="property">property </em><code class="sig-name descname">files</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.fromNP">
+<em class="property">static </em><code class="sig-name descname">fromNP</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.fromNP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.get_filepath">
+<code class="sig-name descname">get_filepath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.get_filepath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.grabParseSave">
+<em class="property">abstract </em><code class="sig-name descname">grabParseSave</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.grabParseSave" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.numpy_files">
+<em class="property">property </em><code class="sig-name descname">numpy_files</code><a class="headerlink" href="#pymethods.parse.angiography.Folder.numpy_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.Folder.parsable_classes">
+<code class="sig-name descname">parsable_classes</code><em class="property"> = ['LkebCurve', 'LkebCurveSet']</em><a class="headerlink" href="#pymethods.parse.angiography.Folder.parsable_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.parse_filepath">
+<code class="sig-name descname">parse_filepath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.parse_filepath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.quickrun">
+<em class="property">abstract </em><code class="sig-name descname">quickrun</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.quickrun" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.Folder.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.Folder.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.parse.angiography.CenterlinesA">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.angiography.</code><code class="sig-name descname">CenterlinesA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folderPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.CenterlinesA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.parse.angiography.CenterlinesA.bifur_centerline_id">
+<code class="sig-name descname">bifur_centerline_id</code><em class="property"> = 'bifCenterline2.data'</em><a class="headerlink" href="#pymethods.parse.angiography.CenterlinesA.bifur_centerline_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.CenterlinesA.main_centerline_id">
+<code class="sig-name descname">main_centerline_id</code><em class="property"> = 'bifCenterline1.data'</em><a class="headerlink" href="#pymethods.parse.angiography.CenterlinesA.main_centerline_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.parse.angiography.CenterlinesB">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.angiography.</code><code class="sig-name descname">CenterlinesB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folderPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.CenterlinesB" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.parse.angiography.CenterlinesB.bifur_centerline_id">
+<code class="sig-name descname">bifur_centerline_id</code><em class="property"> = 'centerline2.data'</em><a class="headerlink" href="#pymethods.parse.angiography.CenterlinesB.bifur_centerline_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.CenterlinesB.main_centerline_id">
+<code class="sig-name descname">main_centerline_id</code><em class="property"> = 'centerline1.data'</em><a class="headerlink" href="#pymethods.parse.angiography.CenterlinesB.main_centerline_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.parse.angiography.MetaOrientCenterlines">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.angiography.</code><code class="sig-name descname">MetaOrientCenterlines</code><a class="headerlink" href="#pymethods.parse.angiography.MetaOrientCenterlines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.parse.angiography.OrientCenterlinesBase">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.angiography.</code><code class="sig-name descname">OrientCenterlinesBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folderPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.OrientCenterlinesBase" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.parse.angiography.OrientCenterlinesBase.bifur_centerline_id">
+<code class="sig-name descname">bifur_centerline_id</code><em class="property"> = None</em><a class="headerlink" href="#pymethods.parse.angiography.OrientCenterlinesBase.bifur_centerline_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.OrientCenterlinesBase.data">
+<code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.OrientCenterlinesBase.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.parse.angiography.OrientCenterlinesBase.main_centerline_id">
+<code class="sig-name descname">main_centerline_id</code><em class="property"> = None</em><a class="headerlink" href="#pymethods.parse.angiography.OrientCenterlinesBase.main_centerline_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.angiography.OrientCenterlinesBase.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resolution</span><span class="o">=</span><span class="default_value">0.001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.angiography.OrientCenterlinesBase.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pymethods.parse.ivoct">
+<span id="ivoct"></span><h2>ivoct<a class="headerlink" href="#module-pymethods.parse.ivoct" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pymethods.parse.ivoct.Image">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.ivoct.</code><code class="sig-name descname">Image</code><a class="headerlink" href="#pymethods.parse.ivoct.Image" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.parse.ivoct.Image.get_contour">
+<code class="sig-name descname">get_contour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">[0.5, 0.3, 0.3]</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">['ge', 'le', 'le']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Image.get_contour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.ivoct.Image.get_landmark_vector">
+<code class="sig-name descname">get_landmark_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">[0.3, 0.3, 0.5]</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">['le', 'le', 'ge']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Image.get_landmark_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.parse.ivoct.Folder">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.parse.ivoct.</code><code class="sig-name descname">Folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.parse.ivoct.Folder.data">
+<code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.ivoct.Folder.data_scaled">
+<code class="sig-name descname">data_scaled</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pix_per_mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder.data_scaled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.ivoct.Folder.grabContourOrLandmarkFromList">
+<em class="property">static </em><code class="sig-name descname">grabContourOrLandmarkFromList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">imageList</span></em>, <em class="sig-param"><span class="n">contourColor</span></em>, <em class="sig-param"><span class="n">contourCheck</span></em>, <em class="sig-param"><span class="n">landmarkColor</span></em>, <em class="sig-param"><span class="n">landmarkCheck</span></em>, <em class="sig-param"><span class="n">landmarkName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder.grabContourOrLandmarkFromList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.ivoct.Folder.load">
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'parsed_data.npy'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.ivoct.Folder.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contourColor</span><span class="o">=</span><span class="default_value">[0.5, 0.3, 0.3]</span></em>, <em class="sig-param"><span class="n">contourCheck</span><span class="o">=</span><span class="default_value">['ge', 'le', 'le']</span></em>, <em class="sig-param"><span class="n">landmarkColor</span><span class="o">=</span><span class="default_value">[0.3, 0.3, 0.5]</span></em>, <em class="sig-param"><span class="n">landmarkCheck</span><span class="o">=</span><span class="default_value">['le', 'le', 'ge']</span></em>, <em class="sig-param"><span class="n">processors</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">landmarkName</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.parse.ivoct.Folder.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filenmame</span><span class="o">=</span><span class="default_value">'parsed_data.npy'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.parse.ivoct.Folder.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules_construct.html" class="btn btn-neutral float-right" title="construct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chris Mamon
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        1.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

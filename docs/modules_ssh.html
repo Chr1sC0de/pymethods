@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ssh &mdash; pymethods 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/versions.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="multiprocess" href="modules_multiprocess.html" />
+    <link rel="prev" title="construct" href="modules_construct.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymethods
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules_parse.html">parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_multiprocess.html">multiprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_algorithms.html">algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_arrays.html">arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_math.html">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymethods</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Modules</a> &raquo;</li>
+        
+      <li>ssh</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules_ssh.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pymethods.ssh.client">
+<span id="ssh"></span><h1>ssh<a class="headerlink" href="#module-pymethods.ssh.client" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pymethods.ssh.client.Client">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.ssh.client.</code><code class="sig-name descname">Client</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">username</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">22</span></em>, <em class="sig-param"><span class="n">retryLimit</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.Client" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.ssh.client.Client.connect">
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">remoteTries</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.Client.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.Client.copyLocalToRemote_Directory">
+<code class="sig-name descname">copyLocalToRemote_Directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">localFolder</span></em>, <em class="sig-param"><span class="n">remoteFolder</span></em>, <em class="sig-param"><span class="n">remoteTries</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.Client.copyLocalToRemote_Directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.Client.copyRemoteToLocal_Directory">
+<code class="sig-name descname">copyRemoteToLocal_Directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">remoteFolder</span></em>, <em class="sig-param"><span class="n">localFolder</span></em>, <em class="sig-param"><span class="n">remoteTries</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.Client.copyRemoteToLocal_Directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.Client.deleteRemote_Directory">
+<code class="sig-name descname">deleteRemote_Directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">remoteDirectory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.Client.deleteRemote_Directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.Client.disconnect">
+<code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.Client.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.ssh.client.FOAM">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.ssh.client.</code><code class="sig-name descname">FOAM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">localFoam</span></em>, <em class="sig-param"><span class="n">remoteMain</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.clean_local">
+<code class="sig-name descname">clean_local</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.clean_local" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.clean_remote">
+<code class="sig-name descname">clean_remote</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.clean_remote" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.copyLocalToRemote_Directory">
+<code class="sig-name descname">copyLocalToRemote_Directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">remoteTries</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.copyLocalToRemote_Directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.copyRemoteToLocal_Directory">
+<code class="sig-name descname">copyRemoteToLocal_Directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">remoteTries</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.copyRemoteToLocal_Directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.make_job_script">
+<code class="sig-name descname">make_job_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.make_job_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.modify_lines">
+<code class="sig-name descname">modify_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.modify_lines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.quick_run">
+<code class="sig-name descname">quick_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.quick_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.ssh.client.FOAM.run_foam">
+<code class="sig-name descname">run_foam</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sleep_time</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.FOAM.run_foam" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.ssh.client.MetaClient">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.ssh.client.</code><code class="sig-name descname">MetaClient</code><a class="headerlink" href="#pymethods.ssh.client.MetaClient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.ssh.client.SpartanFOAM">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.ssh.client.</code><code class="sig-name descname">SpartanFOAM</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.ssh.client.SpartanFOAM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules_multiprocess.html" class="btn btn-neutral float-right" title="multiprocess" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules_construct.html" class="btn btn-neutral float-left" title="construct" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chris Mamon
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        1.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

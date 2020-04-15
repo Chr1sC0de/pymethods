@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>utils &mdash; pymethods 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/versions.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymethods
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymethods</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules_utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pymethods.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-pymethods.utils" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pymethods.utils.Descriptor">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">Descriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.Descriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base descriptor class</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.LockedDescriptor">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">LockedDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.LockedDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.NoInputFunctionAlias">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">NoInputFunctionAlias</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">store</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.NoInputFunctionAlias" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.cummulative_decompose">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">cummulative_decompose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span><span class="p">:</span> <span class="n">Iterable</span></em><span class="sig-paren">)</span> &#x2192; List<a class="headerlink" href="#pymethods.utils.cummulative_decompose" title="Permalink to this definition">¶</a></dt>
+<dd><p>decompose an itearble cummutavely, for example,
+cummulative_decompose(‘string’) = [‘s’, ‘st’, ‘str’,…]</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>iterable (Iterable): an iterable object</p>
+</dd>
+<dt>Returns:</dt><dd><p>List: list of the cummulatively decomposed iterable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.IsSubsetString">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">IsSubsetString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">main_string</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">case_sensitive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.IsSubsetString" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="pymethods.utils.IsSubsetString.case_sensitive">
+<code class="sig-name descname">case_sensitive</code><a class="headerlink" href="#pymethods.utils.IsSubsetString.case_sensitive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.utils.IsSubsetString.decomposed_string">
+<em class="property">property </em><code class="sig-name descname">decomposed_string</code><a class="headerlink" href="#pymethods.utils.IsSubsetString.decomposed_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.utils.IsSubsetString.main_string">
+<code class="sig-name descname">main_string</code><a class="headerlink" href="#pymethods.utils.IsSubsetString.main_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.IsAny">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">IsAny</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">comaprison_objects</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Union<span class="p">[</span>type<span class="p">, </span>object<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.IsAny" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.utils.IsAny.check">
+<em class="property">abstract </em><code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em>, <em class="sig-param"><span class="n">comparison</span><span class="p">:</span> <span class="n">type</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.utils.IsAny.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>abstract method that compares obj to comparison,</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>obj (object): object to be checked
+comparison (type): type to compare with</p>
+</dd>
+<dt>Raises:</dt><dd><p>NotImplementedError:</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if passes checks else False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.utils.IsAny.comaprison_objects">
+<code class="sig-name descname">comaprison_objects</code><a class="headerlink" href="#pymethods.utils.IsAny.comaprison_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.Isinstance">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">Isinstance</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">comaprison_objects</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Union<span class="p">[</span>type<span class="p">, </span>object<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.Isinstance" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.utils.Isinstance.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em>, <em class="sig-param"><span class="n">comparison</span><span class="p">:</span> <span class="n">type</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.utils.Isinstance.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Isinstance</p>
+<p>test if obj is an instance of the comparison type</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>obj (object): object to be checked
+comparison (type): type to compare with</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.utils.Isinstance.comaprison_objects">
+<code class="sig-name descname">comaprison_objects</code><a class="headerlink" href="#pymethods.utils.Isinstance.comaprison_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.Issubclass">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">Issubclass</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">comaprison_objects</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Union<span class="p">[</span>type<span class="p">, </span>object<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.Issubclass" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.utils.Issubclass.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em>, <em class="sig-param"><span class="n">comparison</span><span class="p">:</span> <span class="n">type</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.utils.Issubclass.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Issubclass</p>
+<p>test if obj is a subclass of the comparison type</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>obj (object): object to be checked
+comparison (type): type to compare with</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.utils.Issubclass.comaprison_objects">
+<code class="sig-name descname">comaprison_objects</code><a class="headerlink" href="#pymethods.utils.Issubclass.comaprison_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.is_none">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">is_none</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.utils.is_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the obj is None</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>obj (object):</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.Isin">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">Isin</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">comaprison_objects</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Union<span class="p">[</span>type<span class="p">, </span>object<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.Isin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.utils.Isin.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em>, <em class="sig-param"><span class="n">comparison</span><span class="p">:</span> <span class="n">Iterable</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.utils.Isin.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Isinany</p>
+<p>check if the object is in any of the self.comaprison_objects</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>IsAny ([type]): [description]
+obj (object): [description]
+comparison (Iterable): [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pymethods.utils.Isin.comaprison_objects">
+<code class="sig-name descname">comaprison_objects</code><a class="headerlink" href="#pymethods.utils.Isin.comaprison_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.hex_memory">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">hex_memory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.hex_memory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.SequentialFunction">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">SequentialFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.SequentialFunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.AliasDict">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">AliasDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alias_names</span><span class="p">:</span> <span class="n">Iterable<span class="p">[</span>Hashable<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.AliasDict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.utils.AliasDict.register_key">
+<code class="sig-name descname">register_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pymethods.utils.AliasDict.register_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a new key in the dictionary. Speed up lookup of strings
+by interning its values <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">https://en.wikipedia.org/wiki/String_interning</a>
+this is done by storing only a single copy of each distinc string value</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>key (Hashable): hashable object to</dt><dd><p>register as new key</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.utils.LenDimShape">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">LenDimShape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.LenDimShape" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.utils.LenDimShape.set_dim_extractor">
+<code class="sig-name descname">set_dim_extractor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pymethods.utils.LenDimShape.set_dim_extractor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.len_dim_shape_axis">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">len_dim_shape_axis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pymethods.utils.len_dim_shape_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the len of the dimension of array
+or object with shape property containing a __len__ method.
+Ferformed along specified axis</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>obj (object): [description]
+axis (int, optional): dimension to find the length of. Defaults to 0.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.len_dim_shape_longest">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">len_dim_shape_longest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pymethods.utils.len_dim_shape_longest" title="Permalink to this definition">¶</a></dt>
+<dd><p>len_dim_shape_longest [summary]</p>
+<p>Find the len of the longest dimension of array
+or object with shape property that contains a __len__ method</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>array (object): object containing a shape</dt><dd><p>property with a len method</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>int: len of shape</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.len_dim_shape_shortest">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">len_dim_shape_shortest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pymethods.utils.len_dim_shape_shortest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the len of the shortest dimension of array
+or object with shape property that contains a __len__ method</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>array (object): object containing a shape</dt><dd><p>property with a len method</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>int: len of shape</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.is_1d">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">is_1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.utils.is_1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the object is 1 dimensional</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): array to check</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if the data is 1d False if not</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.len_shape">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">len_shape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pymethods.utils.len_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>len the length of the shape of an object</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>obj (object): object with shape</dt><dd><p>property</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>int: the length of the shape</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.make_column">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">make_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.utils.make_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a vector into column vector. This assumes that the vector
+has lenshape 1 otherwise it is passed directly</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.ndarray):</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.make_row">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">make_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.utils.make_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a vector into row vector. This assumes that the vector
+has lenshape 1 otherwise it is passed directly</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.ndarray):</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.chunk_iterable">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">chunk_iterable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indexable</span><span class="p">:</span> <span class="n">Iterable</span></em>, <em class="sig-param"><span class="n">num_chunk</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">callbacks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pymethods.utils.chunk_iterable" title="Permalink to this definition">¶</a></dt>
+<dd><p>For some iterable generate num_chunk, approximately even number of chunks</p>
+<dl>
+<dt>Args:</dt><dd><p>iterable (Iterable): an iterable to be chunked
+num_chunk (int): total number of chunks to generate
+callbacks (Iterable[Callable]): an iterable containing callable methods</p>
+<blockquote>
+<div><p>which take two arguments (indexed, indexable). These callbacks
+operate over these indexable values and outputs the values
+of the current chunk</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>list: a list of lists of chunks from the iterabel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.enumerate_chunk">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">enumerate_chunk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span><span class="p">:</span> <span class="n">Iterable</span></em>, <em class="sig-param"><span class="n">num</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pymethods.utils.enumerate_chunk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.sort_pair_list_and_extract_items">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">sort_pair_list_and_extract_items</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mp_list</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pymethods.utils.sort_pair_list_and_extract_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>sort_and_extract_mp_list</p>
+<dl class="simple">
+<dt>A list when enumerated and zipped has the form:</dt><dd><p>[(key, item_1),…, (key, item_n)]</p>
+</dd>
+</dl>
+<p>This method sorts the input list by the
+key and extracts a list of the items.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>mp_list (list): enumerated zipped list</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: the sorted list of items</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.memory_size">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">memory_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">'bytes'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.memory_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.time_func">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">time_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.time_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.gap_space">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">gap_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">lim</span></em>, <em class="sig-param"><span class="n">gap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.gap_space" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.utils.make_odd">
+<code class="sig-prename descclassname">pymethods.utils.</code><code class="sig-name descname">make_odd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.utils.make_odd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chris Mamon
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        1.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

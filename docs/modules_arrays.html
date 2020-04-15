@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arrays &mdash; pymethods 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/versions.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="math" href="modules_math.html" />
+    <link rel="prev" title="algorithms" href="modules_algorithms.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymethods
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules_parse.html">parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_ssh.html">ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_multiprocess.html">multiprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_algorithms.html">algorithms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_math.html">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymethods</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Modules</a> &raquo;</li>
+        
+      <li>arrays</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules_arrays.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pymethods.arrays">
+<span id="arrays"></span><h1>arrays<a class="headerlink" href="#module-pymethods.arrays" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pymethods.arrays.Angle">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">'radians'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Angle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.arrays.Angle.deg">
+<em class="property">property </em><code class="sig-name descname">deg</code><a class="headerlink" href="#pymethods.arrays.Angle.deg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Angle.deg_to_rad">
+<em class="property">classmethod </em><code class="sig-name descname">deg_to_rad</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degrees</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#pymethods.arrays.Angle.deg_to_rad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Angle.rad">
+<em class="property">property </em><code class="sig-name descname">rad</code><a class="headerlink" href="#pymethods.arrays.Angle.rad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Angle.rad_to_deg">
+<em class="property">classmethod </em><code class="sig-name descname">rad_to_deg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radians</span><span class="p">:</span> <span class="n">object</span></em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#pymethods.arrays.Angle.rad_to_deg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Vector">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Vector</code><a class="headerlink" href="#pymethods.arrays.Vector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.arrays.Vector.angle">
+<code class="sig-name descname">angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.as_numpy">
+<code class="sig-name descname">as_numpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.as_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.change_reference_frame">
+<code class="sig-name descname">change_reference_frame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.change_reference_frame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.cross">
+<code class="sig-name descname">cross</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.cross" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.direct_vector">
+<code class="sig-name descname">direct_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.direct_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.directed_angle">
+<code class="sig-name descname">directed_angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">direction</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>numpy.ndarray<span class="p">, </span>float<span class="p">]</span><a class="headerlink" href="#pymethods.arrays.Vector.directed_angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.dot">
+<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dot product of two arrays.</p>
+<p>Refer to <cite>numpy.dot</cite> for full documentation.</p>
+<p>numpy.dot : equivalent function</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">array([[2.,  2.],</span>
+<span class="go">       [2.,  2.]])</span>
+</pre></div>
+</div>
+<p>This array method can be conveniently chained:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">array([[8.,  8.],</span>
+<span class="go">       [8.,  8.]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.magnitude">
+<code class="sig-name descname">magnitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.magnitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.make_3d">
+<code class="sig-name descname">make_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.make_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.make_column">
+<code class="sig-name descname">make_column</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.make_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.normalize">
+<code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.perpendicular">
+<code class="sig-name descname">perpendicular</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.perpendicular" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.plot3d">
+<code class="sig-name descname">plot3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.plot3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.project_to_plane">
+<code class="sig-name descname">project_to_plane</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">normal</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.project_to_plane" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.quiver2d">
+<code class="sig-name descname">quiver2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.quiver2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.quiver3d">
+<code class="sig-name descname">quiver3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.quiver3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.quiverly">
+<code class="sig-name descname">quiverly</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">fig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">showarrow</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'black'</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">arrow_size</span><span class="o">=</span><span class="default_value">'scaled'</span></em>, <em class="sig-param"><span class="n">line_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Vector'</span></em>, <em class="sig-param"><span class="n">showlegend</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.quiverly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.rotate_around_vector">
+<code class="sig-name descname">rotate_around_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">phi</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">'radians'</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.rotate_around_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.rotation_matrix">
+<code class="sig-name descname">rotation_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phi</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">'radians'</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.scalar_project">
+<code class="sig-name descname">scalar_project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.scalar_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.scatter2d">
+<code class="sig-name descname">scatter2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.scatter2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.scatter3d">
+<code class="sig-name descname">scatter3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.scatter3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.scatterly">
+<code class="sig-name descname">scatterly</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">fig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'black'</span></em>, <em class="sig-param"><span class="n">showlegend</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.scatterly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.skew_symmetric">
+<code class="sig-name descname">skew_symmetric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.skew_symmetric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.to_vtk">
+<code class="sig-name descname">to_vtk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'pyvista'</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">[0, 0, 0]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vector.to_vtk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Vector.vector_project">
+<code class="sig-name descname">vector_project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.arrays.Vector.vector_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>vector projection of self onto input</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Basis">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Basis</code><a class="headerlink" href="#pymethods.arrays.Basis" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.arrays.Basis.make_3d">
+<code class="sig-name descname">make_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Basis.make_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Basis.quiverly">
+<code class="sig-name descname">quiverly</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Basis.quiverly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Basis.skew_symmetric">
+<code class="sig-name descname">skew_symmetric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Basis.skew_symmetric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.arrays.Basis.to_vtk">
+<code class="sig-name descname">to_vtk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'pyvista'</span></em>, <em class="sig-param"><span class="n">origins</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Basis.to_vtk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Vectorspace">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Vectorspace</code><a class="headerlink" href="#pymethods.arrays.Vectorspace" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.arrays.Vectorspace.quiverly">
+<code class="sig-name descname">quiverly</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Vectorspace.quiverly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Pointsurface">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Pointsurface</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">leafsize</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">external</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Pointsurface" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.arrays.Pointsurface.to_vtk">
+<code class="sig-name descname">to_vtk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'pyvista'</span></em>, <em class="sig-param"><span class="n">includeNormals</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">includeCurvature</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">structuredShape</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Pointsurface.to_vtk" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts our points surface into a vtk object</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>method (str, optional): [description]. Defaults to ‘pyvista’.
+includeNormals (bool, optional): [description]. Defaults to False.
+includeCurvature (bool, optional): [description]. Defaults to False.
+structuredShape ([type], optional): [description]. Defaults to None.</p>
+</dd>
+<dt>Raises:</dt><dd><p>Exception: [description]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[type]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Disk">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Disk</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">leafsize</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">external</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Disk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Cylinder">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Cylinder</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">leafsize</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">external</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Cylinder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Ellipsoid">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Ellipsoid</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">leafsize</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">external</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Ellipsoid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Sphere">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Sphere</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">leafsize</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">external</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Sphere" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Torus">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Torus</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">leafsize</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">neighbours</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">external</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Torus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.ColumnVector">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">ColumnVector</code><a class="headerlink" href="#pymethods.arrays.ColumnVector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Array">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Array</code><a class="headerlink" href="#pymethods.arrays.Array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Curve">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Curve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Curve" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="pymethods.arrays.Curve.to_vtk">
+<code class="sig-name descname">to_vtk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Curve.to_vtk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.Contour">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">Contour</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.Contour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pymethods.arrays.FlatContour">
+<em class="property">class </em><code class="sig-prename descclassname">pymethods.arrays.</code><code class="sig-name descname">FlatContour</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.arrays.FlatContour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flat contours are 3d contours which exist on a plane specified by a
+normal. Note: The contour is automatically converted to 3d</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules_math.html" class="btn btn-neutral float-right" title="math" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules_algorithms.html" class="btn btn-neutral float-left" title="algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chris Mamon
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        1.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

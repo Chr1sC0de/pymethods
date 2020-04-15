@@ -135,18 +135,31 @@ class PointDistributionModel(abc.ABC):
                 self.pointDistribution - self.pointDistribution.mean(
                     -1, keepdims=True)
 
+        def explained_variance(self):
+            return self._explained_variance
+
         def svd(self, modes=6):
+            self.mode = modes
             self._U, self._W, self._V_T = scipy.sparse.linalg.svds(
-                self.pointDeformation, k=modes)
+                self.pointDeformation, k=(np.min(self.pointDeformation.shape)-1))
             indices = np.flipud(np.argsort(self._W))
             self._U = self._U[:, indices]
             self._W = self._W[indices]
             self._V_T = self.V_T[indices, :]
 
+            self._explained_variance = np.sum(self._W[0:modes])/np.sum(self._W)
+
+            self._U = self._U[:, 0:modes]
+            self._W = self._W[0:modes]
+            self._V_T = self._V_T[0:modes, :]
+
         def recoverDimensions(self, shape):
             return shape.reshape(
                 self.originalShape, order='F'
             )
+
+    def explained_variance(self):
+        return self.ndspace.explained_variance()
 
     def generateShape(self, C):
         combination = 0

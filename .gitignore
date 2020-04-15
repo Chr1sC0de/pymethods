@@ -1,4 +1,5 @@
 .vscode/
 pymethodsEnv/
+pymethods.egg-info/
 __pycache__/
 _build/

@@ -1,0 +1,728 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>math &mdash; pymethods 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/versions.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyplot" href="modules_pyplot.html" />
+    <link rel="prev" title="arrays" href="modules_arrays.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pymethods
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules_parse.html">parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_ssh.html">ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_multiprocess.html">multiprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_algorithms.html">algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_arrays.html">arrays</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pymethods</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Modules</a> &raquo;</li>
+        
+      <li>math</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules_math.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pymethods.math">
+<span id="math"></span><h1>math<a class="headerlink" href="#module-pymethods.math" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="pymethods.math.approximate_basis">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">approximate_basis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.approximate_basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>approximate the basis for the input vectors</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): M Vectors x N Dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: N Dimensions x N Dimensions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.least_squares_fitting_of_two_point_sets">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">least_squares_fitting_of_two_point_sets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">vector_b</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>numpy.array<span class="p">]</span><a class="headerlink" href="#pymethods.math.least_squares_fitting_of_two_point_sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>estimate rigd transform required to move vector_a
+such that it overlaps vector_b</p>
+<p><a class="reference external" href="http://nghiaho.com/?page_id=671">http://nghiaho.com/?page_id=671</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vector_a (np.array): N dimensions x M points
+vector_b (np.array): N dimensions x M points</p>
+</dd>
+<dt>Returns:</dt><dd><p>Tuple[np.array]: [rotation, translation] matrices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.dot">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">vector_b</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pymethods.math.dot" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>vector_a (np.ndarray):
+vector_b (np.ndarray):</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.vector_project">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">vector_project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">vector_b</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.vector_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>project vector_a onto vector_b</p>
+<p><a class="reference external" href="https://math.oregonstate.edu/home/programs/undergrad/CalculusQuestStudyGuides/vcalc/dotprod/dotprod.html">https://math.oregonstate.edu/home/programs/undergrad/CalculusQuestStudyGuides/vcalc/dotprod/dotprod.html</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vector_a (np.array): M vectors x N dimensions or N dimensions array
+vector_b (np.array): M vectors x N dimensions or N dimensions array</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: M vectors x N dimensions or N dimensions array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.project_to_plane">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">project_to_plane</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">normal</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.project_to_plane" title="Permalink to this definition">¶</a></dt>
+<dd><p>project the vectors to plane described by vector, this is unscaled</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): M vectors x N dimensions
+normal (np.array): 1 x N dimensions or N dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: M vectors x N dimensions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.change_basis">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">change_basis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">basis</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.change_basis" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://en.wikiversity.org/wiki/Tensors/Transformation_rule_under_a_change_of_basis">https://en.wikiversity.org/wiki/Tensors/Transformation_rule_under_a_change_of_basis</a>]
+Best Vid on change of reference frames
+<a class="reference external" href="https://www.youtube.com/watch?v=P2LTAUO1TdA">https://www.youtube.com/watch?v=P2LTAUO1TdA</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x (np.array): M vectors x N dimensions
+basis (np.array): N dimensions x N dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: M vectors x N dimensions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.rotation_matrix">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">rotation_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">angle</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate rotation matrix required to rotate points about vector by
+phi <a class="reference external" href="https://en.wikipedia.org/wiki/Rotation_matrix">https://en.wikipedia.org/wiki/Rotation_matrix</a></p>
+<dl>
+<dt>Args:</dt><dd><p>vector (np.array): 3 dimension axis of rotation
+angle (np.float): radians, angle to rotate around vector right hand</p>
+<blockquote>
+<div><p>rule</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: 3 x 3 rotation matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.frennet_serret">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">frennet_serret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">centreline</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.frennet_serret" title="Permalink to this definition">¶</a></dt>
+<dd><p>frennet_serret [summary]</p>
+<p>calculate the frennet serret frames
+<a class="reference external" href="https://en.wikipedia.org/wiki/Frenet%E2%80%93Serret_formulas">https://en.wikipedia.org/wiki/Frenet%E2%80%93Serret_formulas</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>centreline (np.array): M vectors x N dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array:  Normal, Binormal, Tangent of curve</dt><dd><p>3 x N dimensions x N dimensions</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.frennet_serret_with_transport">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">frennet_serret_with_transport</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">centreline</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.frennet_serret_with_transport" title="Permalink to this definition">¶</a></dt>
+<dd><p>calcualate frennet frames
+<a class="reference external" href="https://janakiev.com/blog/framing-parametric-curves/">https://janakiev.com/blog/framing-parametric-curves/</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>centreline (np.array): N x M points</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array: Normal, Binormal, Tangent of curve</dt><dd><p>3 x N dimensions x N dimensions</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.cart2pol">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">cart2pol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.cart2pol" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert N x 2 nd array from cartesian to polar</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): 2 dimensions x M vectors</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: 2 dimensions x M vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.pol2cart">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">pol2cart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.pol2cart" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert N x 2 ndarray from polar to cartesian</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): M vectors x 2 dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: M vectors x 2 dimensions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.all_diameters">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">all_diameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pymethods.math.all_diameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>for a contour in 2d calculate all the diameters</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>contour (np.array): M vectors x N dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.float: diameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.area_assumed_diameter">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">area_assumed_diameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pymethods.math.area_assumed_diameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the area assumed diameter</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>contour (np.array): M vectors x N dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.float: diameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.is_linearly_dependent">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">is_linearly_dependent</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Tuple<span class="p">[</span>numpy.array<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pymethods.math.is_linearly_dependent" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes in either a single np.array of vectors or
+<a href="#id1"><span class="problematic" id="id2">*</span></a>args of vectors and checks whether they
+are linearly dependent</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.make_linearly_independent">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">make_linearly_independent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.math.make_linearly_independent" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the set of linearly independent vector from
+a set of vectors</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.ndarray): N dimensions x M points</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.vector_perpendicular">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">vector_perpendicular</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors_a</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">vectors_b</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.math.vector_perpendicular" title="Permalink to this definition">¶</a></dt>
+<dd><p>perpendiculr_vectors</p>
+<p>calculate the component of vector_a perpendicular to vector_b</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors_a (np.ndarray): [description]
+vectors_b (np.ndarray): [description]</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.smallest_angle_between_vectors">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">smallest_angle_between_vectors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors_a</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">vectors_b</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.math.smallest_angle_between_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>angle_between_vectors</p>
+<p>calculate the angle between two vectors in radians</p>
+<dl>
+<dt>Args:</dt><dd><p>vectors_a (np.ndarray): N dimensions x M Vectors
+vectors_b (np.ndarray): N dimensions x M or 1 Vectors
+basis (np.ndarray): basis indicating how the</p>
+<blockquote>
+<div><p>angle should be calculated</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: array containing the angles of the vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.directed_angle">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">directed_angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">vector_b</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em>, <em class="sig-param"><span class="n">direction</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.math.directed_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the angle however use information from
+a direction, for example the normal, to determine the correct angle.
+The angle is calculated counter clockwise from the direction.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vector_a (np.ndarray):
+vector_b (np.ndarray):
+direction (np.ndarray): normal direction</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: array of angles</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.minimum_bounding_box">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">minimum_bounding_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span><span class="p">:</span> <span class="n">numpy.ndarray</span></em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#pymethods.math.minimum_bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the minumim bounding box for an array of points</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>array (np.ndarray): N dimensions x M points</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: N dimensions x 2 points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.mean_square">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">mean_square</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.mean_square" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>array (np.array):</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array:</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.mean_square_error">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">mean_square_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">array_b</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.mean_square_error" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mean_squared_error">https://en.wikipedia.org/wiki/Mean_squared_error</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>array_a (np.array):
+array_b (np.array):</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.cross">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">cross</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">vectors_b</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>cross product, if single vector it is faster to
+hard code the cross product rather than use the np.cross method.
+Thus, if a single vector is passed through the hardcoded method is applied.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors_a (np.array):
+vectors_b (np.array):</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: crossed vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.make_3d">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">make_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.make_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>For an 2 x N array convert it into 3 x N by concatenating
+a 0 column vector of length end</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): 2 dimensions x M vectors</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: 3 dimensions x M vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.skew_symmetric_3d">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">skew_symmetric_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.skew_symmetric_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Skew-symmetric_matrix">https://en.wikipedia.org/wiki/Skew-symmetric_matrix</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vector (np.array): 1 x N dimension or N Dimension</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: N dimension x N dimension array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.l2_norm">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">l2_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">keepdims</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>float<span class="p">, </span>numpy.array<span class="p">]</span><a class="headerlink" href="#pymethods.math.l2_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculates the l2_norm commonly associated
+with the magnitude of a vector.</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>vector_a (np.array): N dimension or M Vector x N dimension</dt><dd><p>array</p>
+</dd>
+</dl>
+<p>method (str): string specifying which method to use</p>
+</dd>
+<dt>Returns:</dt><dd><p>Union[np.float, np.array]: l2_norm of input vector/vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.mean">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>float<span class="p">, </span>numpy.array<span class="p">]</span><a class="headerlink" href="#pymethods.math.mean" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>vector_a (np.array): N dimension or M Vector x N dimension</dt><dd><p>array</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Union[np.float, np.array]: mean of input vector/vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.close_curve">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">close_curve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.close_curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assume input is a closed contour. Check the 0 and -1 indices.
+If they are not the same append 0 to the array</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>contour (np.array): N dimension contour x M vectors</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: N dimension contour x M vectors or M + 1 vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.area">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">area</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pymethods.math.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate area of closed 2d contour</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>contour (np.array): M points x N dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.float: area</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.contour_centroid">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">contour_centroid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.contour_centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_centroid_of_cross_section</p>
+<p>get centroid of a closed contour using 2d greene’s theorem
+by projectiing it onto the basis in 2d</p>
+<p><a class="reference external" href="https://leancrew.com/all-this/2018/01/greens-theorem-and-section-properties/">https://leancrew.com/all-this/2018/01/greens-theorem-and-section-properties/</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>contour ([nd.array]): N x M points
+basis ([nd.array]): 3 x 3 matrix of where the contour lies</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: 1 x 3 location of centroid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.normalize">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">normalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>vector_a (np.array): N dimension array x M Vectors</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: N dimension array x M Vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.scalar_project">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">scalar_project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector_a</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">vector_b</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.scalar_project" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://math.oregonstate.edu/home/programs/undergrad/CalculusQuestStudyGuides/vcalc/dotprod/dotprod.html">https://math.oregonstate.edu/home/programs/undergrad/CalculusQuestStudyGuides/vcalc/dotprod/dotprod.html</a></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vector_a (np.array): N dimensions x M vectors
+vector_b (np.array): N dimensions x M, 1, 3 vectors</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: M vectors x N dimensions or N dimensions array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.order_basis">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">order_basis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">basis</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.order_basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>we want the basis to be ordered in [[i], [j], [k]]. i and j can be
+arbitrary however k must be consistent and should point normal to the plane</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): M Vectors x N dimension array
+basis (np.array): 3 Vectors x N dimension array</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: 3 Vectors x N dimension array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.approximate_normal">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">approximate_normal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.approximate_normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>approximate the normal for the input vectors</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vectors (np.array): M Vectors x N Dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.array: N Dimensions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.argSortByBasis">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">argSortByBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">ref_basis</span></em>, <em class="sig-param"><span class="n">n_to_check</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.math.argSortByBasis" title="Permalink to this definition">¶</a></dt>
+<dd><p>arg_basis_sort [summary]</p>
+<p>For an ndarray describing the points along a closed contour and a ref_basis
+which describes the plane outpud the ids of the sorted points. The points are sorted such that
+the ndarray[0,:] is the point closest to the i-axis and the orientation of rotation
+is determined by the closest point</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>ndarray (_np.ndarray)<span class="classifier">N x M matrix where N is the number of points</span></dt><dd><p>and M is the total number of dimensions</p>
+</dd>
+</dl>
+<p>ref_basis (_np.ndarray): 3 x 3 basis matrix discribing
+return_ref (bool, optional): return a copy of ndarray in the</p>
+<blockquote>
+<div><p>ref_basis frame. Defaults to True.</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>_np.ndarray: list of sorted indices</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pymethods.math.sortByBasis">
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">sortByBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">returnBasis</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ref_basis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.math.sortByBasis" title="Permalink to this definition">¶</a></dt>
+<dd><p>arg_basis_sort</p>
+<p>For an ndarray describing the points along a closed contour and a ref_basis
+which describes the plane, return the sorted points. The points are sorted such that
+ndarray[0,:] is the point closest to the i-axis of ref_basis and the points in increasing order describe a
+rotation in the clockwise direction of the given ref_basis.</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>ndarray (_np.ndarray)<span class="classifier">N x M matrix where N is the number of points</span></dt><dd><p>and M is the total number of dimensions</p>
+</dd>
+</dl>
+<p>ref_basis (_np.ndarray): 3 x 3 basis matrix discribing
+n_to_check (int, optional): number of points to check for</p>
+<blockquote>
+<div><p>clockwise rotation. Number of points should not be beyond the j-axis
+as the orientation will be flipped. Defaults to 20.</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>_np.ndarray: list of sorted points</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules_pyplot.html" class="btn btn-neutral float-right" title="pyplot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules_arrays.html" class="btn btn-neutral float-left" title="arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chris Mamon
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        1.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
