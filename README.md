@@ -8,8 +8,9 @@ Angiography data has been extracted via QAngio XA 3D RE, (Medis, Leiden, the Net
 to unwrap the cylindrical meshes the python bindings found in `CGALUMethods <https://github.com/Chr1sC0de/CGALUnwrapper>`_ should be installed. The methods
 can be imported via
 
-.. code-block:: Python
-   from pymethods import CGALMethods as CM
+````
+from pymethods import CGALMethods as CM
+````
 
 To generate meshes for CFD the `pointwise <https://www.pointwise.com/>`_ must be installed.
 
