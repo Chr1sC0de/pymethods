@@ -7,7 +7,7 @@ from ...multiprocess import NumpyMulti
 from pymethods import pyplot as plt
 
 
-_debug_ = False 
+_debug_ = False
 
 
 def _W_solve(k1, k2, theta):

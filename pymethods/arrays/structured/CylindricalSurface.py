@@ -188,6 +188,12 @@ class CylindricalSurface(np.ndarray):
         else:
             return normals.reshape(normals.shape[0], shape[-2], shape[-1])
 
+    def get_centerline(self):
+        centroids = np.concatenate([Contour(self[:,:, i]).centroid for i in range(self.shape[-1])], axis=-1)
+        centerline = Curve(centroids)
+        return centerline
+
+
 if __name__ == "__main__":
     import sys
     import pymethods as pma
