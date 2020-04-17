@@ -3,10 +3,12 @@ import logging
 try:
     from pymethods.arrays import FlatContour, Curve, Contour, ColumnVector
     from pymethods import math
+    from pymethods.algorithms import write_stl
     import pymethods as pma
 except ImportError:
     from ...arrays import FlatContour, Curve, Pointsurface
     from ... import math
+    from ...algorithms import write_stl
 
 from tqdm import tqdm
 import pyvista as pv
@@ -144,6 +146,9 @@ class CylindricalSurface(np.ndarray):
     def to_vtk(self, method='pyvista'):
         if method == 'pyvista':
             return pv.StructuredGrid(*self)
+
+    def to_stl(self, path="mesh.stl"):
+        write_stl(self, path)
 
     def scatter3d(self, *args, **kwargs):
         color = kwargs.pop('color', 'blue')

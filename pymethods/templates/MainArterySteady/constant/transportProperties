@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+//transportModel  Quemada;
+transportModel  Newtonian;
+
+nu              nu [ 0 2 -1 0 0 0 0 ] 3.302E-06;
+
+CrossPowerLawCoeffs
+{
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 0.01;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 10;
+    m               m [ 0 0 1 0 0 0 0 ] 0.4;
+    n               n [ 0 0 0 0 0 0 0 ] 3;
+}
+
+BirdCarreauCoeffs
+{
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 0.025;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 0.0025;
+    k               k [ 0 0 1 0 0 0 0 ] 0.11;
+    n               n [ 0 0 0 0 0 0 0 ] 0.395;
+}
+
+CarreauYasudaCoeffs
+{
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 0.025;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 0.0025;
+    k               k [ 0 0 1 0 0 0 0 ] 0.11;
+    n               n [ 0 0 0 0 0 0 0 ] 0.395;
+    alpha           alpha [ 0 0 0 0 0 0 0 ] 0.644;
+}
+
+QuemadaCoeffs
+{
+    tau0            tau0 [ 1 -1 -2 0 0 0 0 ] 7.160E-03;
+    muInf           muInf [ 1 -1 -1 0 0 0 0 ] 4.204E-03;
+    lambda          lambda [ 0 0 -1 0 0 0 0 ] 4.367E-03;
+    rho 	    rho [1 -3 0 0 0 0 0] 1060;
+}
+
+// ************************************************************************* //

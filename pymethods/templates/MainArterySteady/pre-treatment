@@ -1,0 +1,4 @@
+#!/bin/sh
+transformPoints -scale "(0.001 0.001 0.001)"
+checkMesh              > checkMesh.txt
+patchIntegrate U INLET > patchIntegrate.txt
