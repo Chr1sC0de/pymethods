@@ -32,7 +32,7 @@ class Curve(arrays.Vectorspace):
     def __init__(self, *args, **kwargs) -> None:
         reparam_curve = kwargs.pop('reparam_curve', None)
         self._initialize_splineparams(**kwargs)
-        self.dim_funcs = deque()
+        self.initialize_funcs()
         self._splinify(reparam=reparam_curve)
 
     def _initialize_splineparams(self, **kwargs):
@@ -149,8 +149,7 @@ class Curve(arrays.Vectorspace):
             s = self.s_frac
         else:
             s = reparam
-            if self.dim_funcs:
-                self.dim_funcs = deque()
+            self.reset_funcs()
 
         for i in range(self.shape[0]):
             try:
@@ -174,6 +173,48 @@ class Curve(arrays.Vectorspace):
                     else:
                         raise Exception
 
+    def spline_data(self, data, target_name, reparam=None):
+
+        if reparam is None:
+            s = self.s_frac
+        else:
+            s = reparam
+            self.reset_funcs()
+
+        try:
+            spline_func = sci.splrep(s, data, **self.splineparams)
+            getattr(self, target_name).append(SplineFunc(spline_func))
+        except ValueError:
+            try:
+                y_unique, unique_inds = np.unique(
+                    data[0:-2], return_index=True)
+                unique_inds.sort()
+                s_unique = np.concatenate(
+                    [s[unique_inds], s[-1, None]])
+                y_unique = np.concatenate(
+                    [y_unique, data[-1, None]])
+                spline_func = sci.splrep(
+                    s_unique, y_unique, **self.splineparams)
+                getattr(self, target_name).append(SplineFunc(spline_func))
+            except ValueError:
+                if len(y_unique) > 1:
+                    pass
+                else:
+                    raise Exception
+
+    def reset_funcs(self):
+        if self.dim_funcs:
+            self.dim_funcs = deque()
+
+    def initialize_funcs(self):
+        self.dim_funcs = deque()
+
+    def initialize_class(self, s):
+        return self.__class__(np.stack([f(s) for f in self.dim_funcs]))
+
+    def initialize_column_vector(self, s):
+        return arrays.ColumnVector([f(s) for f in self.dim_funcs])
+
     def filter(self, window_length, polyorder, **kwargs):
         self = self.view(np.ndarray)
         return self.__class__(
@@ -183,8 +224,8 @@ class Curve(arrays.Vectorspace):
             self, s, *args, reparam_curve=None, **kwargs) -> np.ndarray:
         try:
             if not hasattr(self, 'dim_funcs'):
-                self._initialize_splineparams(kwargs)
-                self.dim_funcs = deque()
+                self._initialize_splineparams(**kwargs)
+                self.initialize_funcs()
                 self._splinify()
 
             if reparam_curve is None:
@@ -201,10 +242,9 @@ class Curve(arrays.Vectorspace):
 
             if utils.is_iterable(s):
                 s[s < 0] = s[s < 0] + 1
-
-            return self.__class__(np.stack([f(s) for f in self.dim_funcs]))
+            return self.initialize_class(s)
         except ValueError:
-            return arrays.ColumnVector([f(s) for f in self.dim_funcs])
+            return self.initialize_column_vector(s)
 
     def to_vtk(self):
         return pv.Spline(self.T)
@@ -249,7 +289,7 @@ class Contour(Curve):
 
         if not hasattr(self, 'dim_funcs'):
             self._initialize_splineparams(**kwargs)
-            self.dim_funcs = deque()
+            self.initialize_funcs()
             self._splinify()
 
         if reparam_curve is None:
@@ -273,7 +313,7 @@ class Contour(Curve):
             close = False
 
         if close:
-            return self.__class__(np.stack([f(s) for f in self.dim_funcs]))
+            return self.initialize_class(s)
         else:
             return Curve(np.stack([f(s) for f in self.dim_funcs]))
 
@@ -321,12 +361,15 @@ class Contour(Curve):
 
         return cls(np.stack([x, y], axis=0)).make_3d() + arrays.ColumnVector(centroid).make_3d()
 
-    def make2d(self, returnBackwards=True):
-        centroid = self.centroid
-        basis = self.basis
+    def area_assumed_diameter(self):
+        return 2*np.sqrt(self.area/np.pi)
 
-        if returnBackwards:
-            return transformed, (centroid, basis)
+    # def make2d(self, returnBackwards=True):
+    #     centroid = self.centroid
+    #     basis = self.basis
+
+    #     if returnBackwards:
+    #         return transformed, (centroid, basis)
 
 
 class FlatContour(Contour):
@@ -476,8 +519,6 @@ if __name__ == "__main__":
         domain = S(U, V)
 
         structured_domain = domain.reshape((3, x, y))
-
-        import pyvista as pv
 
         # mesh = pv.StructuredGrid(*structured_domain)
         # mesh.plot(show_bounds =True)

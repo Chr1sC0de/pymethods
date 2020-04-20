@@ -85,7 +85,7 @@ class CylindricalSurface(np.ndarray):
                 )
         return self.__class__(newsurface)
 
-    def align_contour_points(self, progress=False):
+    def align_contour_points(self, progress=False, field_grids=None):
         if isinstance(self, (list, tuple)):
             contour_stack = np.stack(self, axis=-1)
         else:
@@ -95,6 +95,7 @@ class CylindricalSurface(np.ndarray):
         shortest_length = np.inf
 
         while not converged:
+            roll_data = []
 
             for i in tqdm(
                     np.arange(contour_stack.shape[-1]-1), disable=not progress):
@@ -103,7 +104,15 @@ class CylindricalSurface(np.ndarray):
                 distance = math.l2_norm(B-A)
                 argmin = np.argmin(distance.squeeze())
                 contour_stack[:, :, i+1] = np.roll(B, -argmin, axis=-1)
+                # if a field is provided perform the same operation for the field
+                if field_grids is not None:
+                    for grid_id in field_grids.keys():
+                        field_grids[grid_id][:, :, i+1] = np.roll(
+                            field_grids[grid_id][:, :, i+1], -argmin, axis=-1)
+                roll_data.append(argmin)
 
+
+            # end
             # find the shortest path
             deltas = contour_stack[:, :, 1:] - contour_stack[:, :, 0:-1]
             deltas = np.linalg.norm(deltas, axis=0)
@@ -115,12 +124,20 @@ class CylindricalSurface(np.ndarray):
             else:
                 break
             contour_stack = np.roll(contour_stack, -i_short, axis=1)
+            # if a field is provided perform the same operation for the field
+            if field_grids is not None:
+                for grid_id in field_grids.keys():
+                    field_grids[grid_id] = np.roll(field_grids[grid_id], -i_short, axis=1)
+            #end
             logging.debug(
                 'rollval=%d, shortest_length=%0.3f' % (
                     i_short, shortest_length))
 
         # now find the shortest path and make that into the cutline
-        return CylindricalSurface(contour_stack)
+        if field_grids is not None:
+            return CylindricalSurface(contour_stack), field_grids
+        else:
+            return CylindricalSurface(contour_stack)
 
     def filter(self, retries=10, **kwargs):
         tries = []

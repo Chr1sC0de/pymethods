@@ -121,7 +121,14 @@ class Pointsurface(arrays.Vectorspace):
 
     @PrintMethod("computing principle curvatures")
     def compute_principle_curvatures(
-            self, method='can_lsq_fit', n_processors='max') -> np.ndarray:
+            self, method='can_lsq_fit', n_processors='max',
+            leafsize=200, neighbours=50,
+            external=True) -> np.ndarray:
+
+        self.leafsize=leafsize
+        self.neighbours=neighbours
+        self.external=external
+
         if not hasattr(self, 'point_basis'):
             self.compute_all_normals()
         self.principle_curvatures, self.principle_directions = \

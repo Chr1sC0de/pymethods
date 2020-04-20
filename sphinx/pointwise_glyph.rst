@@ -1,7 +1,7 @@
-Pointwise Glyphs for Autmatic Mesh Generation
----------------------------------------------
+Pointwise Glyphs for Automatic Mesh Generation
+----------------------------------------------
 
-To allow for easier automation and consistent CFD mesh generation the `templates.make_glf_stl_to_foammake_glf_stl_to_foam`,
+To allow for easier automation and consistent CFD mesh generation the `templates.make_glf_stl_to_foammake_glf_stl_to_foam` can be used,
 
 .. code-block:: Python
 
@@ -21,5 +21,5 @@ To allow for easier automation and consistent CFD mesh generation the `templates
       file_name                     = 'stl_to_foam.glf'
    )
 
-The above code will generate a pointwise glyph which automates the construction of an OpenFoam mesh. Running the glyph will automatically call pointwise,
-creating the pointwise polymesh in the folder specified by the user
+The above code will generate a pointwise glyph which automates the construction of an OpenFoam mesh in pointwise.
+Running the glyph will automatically call pointwise, creating the pointwise polymesh in the folder specified by the user before closing.

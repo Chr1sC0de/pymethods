@@ -1,5 +1,9 @@
 import numpy as np
 
+def is_closed_curve(contour):
+    if not np.allclose(contour[:, 0], contour[:, -1]):
+        return False
+    return True
 
 def close_curve(contour: np.array) -> np.array:
     """close_curve

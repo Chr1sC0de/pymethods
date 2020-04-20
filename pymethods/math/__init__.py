@@ -5,7 +5,7 @@ from .make_3d import make_3d
 from .skew_symmetric import skew_symmetric_3d
 from .l2_norm import l2_norm
 from .mean import mean
-from .close_curve import close_curve
+from .close_curve import close_curve, is_closed_curve
 from .area import area
 from .centroid import contour_centroid
 from .normalize import normalize

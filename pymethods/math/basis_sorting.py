@@ -1,8 +1,10 @@
 import numpy as np
 try:
     from pymethods import math
+    from pymethods import pyplot as plt
 except ImportError:
     from .. import math
+    from .. import pyplot as plt
 
 
 def argSortByBasis(array, ref_basis, n_to_check=20):
@@ -26,7 +28,7 @@ def argSortByBasis(array, ref_basis, n_to_check=20):
     ndarray_centered = array - meanLocation
     n_pts = ndarray_centered.shape[-1]
     # ndarray_centered_2d
-    A = ref_basis @ ndarray_centered
+    A = ref_basis.T @ ndarray_centered
     ids_vector = np.arange(n_pts)[None, :]
     # concatenate A with id vector
     A_concat = np.concatenate([A, ids_vector], axis=0)

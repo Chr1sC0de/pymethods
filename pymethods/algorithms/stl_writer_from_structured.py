@@ -17,9 +17,9 @@ def write_stl(OCT_contour,name = 'OCT.stl'):
         name (str, optional): destination of save file . Defaults to 'OCT.stl' in local directory.
     """
     # OCT_contour = np.stack(OCT_contour,axis = -1)
-
+    # our inputs will be of shape dims, pts_percontour, contours
     OCT_contour = OCT_contour.swapaxes(0,1)
-    pointNum,dims,contourNum = OCT_contour.shape
+    pointNum, dims, contourNum = OCT_contour.shape
     total_num_vertices = pointNum* contourNum
     vertices = np.zeros((total_num_vertices, 3))
     faces = np.zeros((2 * (total_num_vertices-pointNum), 3))

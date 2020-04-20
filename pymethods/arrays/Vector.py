@@ -1,6 +1,6 @@
 import numpy as np
 from typing import Union, Iterable
-
+import pyvista as pv
 try:
     from pymethods import math, utils, pyplot
     from pymethods.arrays import Angle

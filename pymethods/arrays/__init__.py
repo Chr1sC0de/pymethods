@@ -12,6 +12,9 @@ from .PointsurfaceShapes import (
     Ellipsoid, EllipsoidSurfaceProperties,
     Sphere, Torus, TorusSurfaceProperties
 )
+from .FieldCurve import (
+    FieldMixin, FieldCurve, FieldContour
+)
 
 __all__ = [
     'Angle', 'Vector', 'Basis', 'Vectorspace', 'Pointsurface',

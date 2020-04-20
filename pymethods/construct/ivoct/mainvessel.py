@@ -42,7 +42,7 @@ class VesselSurface:
         try:
             folder_oct = pma.parse.ivoct.Folder(self.path_oct)
             folder_oct.load()
-        except ValueError:
+        except:
             logging.info('OCT data not found, running oct.parse()')
             folder_oct.parse(processors=processors)
 

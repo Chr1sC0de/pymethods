@@ -4,9 +4,9 @@ from . import curvature_fitting
 from . import shapeModelling
 from . import transfinite_interpolation
 from . import elliptic_mesh_generation
-
+from . import unwrapping
 
 __all__ = [
     'BreadthFirstSearch', 'curvature_fitting', 'shapeModelling', 'transfinite_interpolation',
-    'elliptic_mesh_generation'
+    'elliptic_mesh_generation', 'unwrapping'
 ]
