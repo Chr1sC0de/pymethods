@@ -9,6 +9,9 @@ class TransfiniteCylinder:
     def __init__(self, cylindrical_surface):
         assert isinstance(cylindrical_surface, CylindricalSurface)
         self._cylindrical_surface = cylindrical_surface
+        self.UU = None
+        self.VV = None
+        self.WW = None
 
     def __call__(self, u, v, w, reparam=True):
 
@@ -24,9 +27,10 @@ class TransfiniteCylinder:
         return surface
 
     def pts_mesh(self, u, v, w, **kwargs):
-        UU, VV = np.meshgrid(u, v)
-        UU = UU.flatten()
-        VV = VV.flatten()
+        self.UU, self.VV = np.meshgrid(u, v)
+        self.WW = np.ones_like(self.UU)
+        UU = self.UU.flatten()
+        VV = self.VV.flatten()
         return self(UU, VV, w, **kwargs).reshape(
             (3, len(u), len(v), len(w))
         )
