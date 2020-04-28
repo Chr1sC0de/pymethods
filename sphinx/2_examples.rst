@@ -9,3 +9,5 @@ Examples
    unwrapping
    curvature
    transfinite_interpolation
+   transfinite_interpolation_volume
+   elliptic_grid_solver

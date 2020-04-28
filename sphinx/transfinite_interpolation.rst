@@ -35,7 +35,7 @@ now for each contour specified let us transfinitely interpolate the region bound
       )
 
 
-during the transfinite interpolation process the contour is divided into 4 apprixiamtely equally length segments.
+during the transfinite interpolation process the contour is divided into 4 approximately equal length segments.
 The segments are paired. For each pair U, V let us divide the segments into a fixed number of points and plot the results,
 
 
