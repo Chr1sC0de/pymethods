@@ -17,7 +17,7 @@ def frennet_serret_with_transport(
                 3 x N dimensions x N dimensions
     """
     n = centreline.shape[-1]
-    dX = np.gradient(centreline, axis=-1, edge_order=2)
+    dX = np.gradient(centreline, axis=-1, edge_order=1)
     T = math.normalize(dX)
     V = np.zeros_like(centreline)
     V[:, 0] = math.normalize(

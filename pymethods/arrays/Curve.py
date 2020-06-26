@@ -4,12 +4,12 @@ except ImportError:
     from .. import arrays
     from .. import math
     from .. import utils
-
 import numpy as np
 from collections import deque
 import scipy.interpolate as sci
 import scipy.signal as ss
 import pyvista as pv
+from .. import pyplot as plt
 
 
 class SplineFunc:
@@ -22,6 +22,7 @@ class SplineFunc:
 
 
 class Curve(arrays.Vectorspace):
+
     mode = 'fraction'
 
     delta = utils.NoInputFunctionAlias('delta_per_point', store=True)
@@ -29,7 +30,7 @@ class Curve(arrays.Vectorspace):
     s_tot = utils.NoInputFunctionAlias('total_arc_length', store=True)
     s_frac = utils.NoInputFunctionAlias('fraction_per_point', store=True)
 
-    def __init__(self, *args, **kwargs) -> None:
+    def __init__(self, *args, normal=None, centroid=None, **kwargs) -> None:
         reparam_curve = kwargs.pop('reparam_curve', None)
         self._initialize_splineparams(**kwargs)
         self.initialize_funcs()
@@ -54,6 +55,19 @@ class Curve(arrays.Vectorspace):
         arcdistance = np.zeros(self.shape[-1])
         arcdistance = np.cumsum(self.delta_per_point())
         return arcdistance
+    
+    def curvature(self):
+        sOriginal = self.s_frac 
+        sEquallySpaced = np.linspace(0,1, self.shape[-1]*50)
+        points = self(sEquallySpaced)
+        dxdt = v = np.gradient(points, axis=1)
+        dx2d2t = a = np.gradient(dxdt, axis=1)
+        numerator = np.cross(dxdt, dx2d2t, axis=0)
+        numerator = np.linalg.norm(numerator, axis=0)
+        denominator = np.linalg.norm(dxdt, axis=0)**3
+        kappa = numerator/denominator
+        kappaHat = sci.interp1d(sEquallySpaced, kappa)(sOriginal)
+        return kappaHat
 
     def total_arc_length(self) -> np.ndarray:
         return self.arc_length_per_point()[-1]
@@ -209,8 +223,8 @@ class Curve(arrays.Vectorspace):
     def initialize_funcs(self):
         self.dim_funcs = deque()
 
-    def initialize_class(self, s):
-        return self.__class__(np.stack([f(s) for f in self.dim_funcs]))
+    def initialize_class(self, s, **kwargs):
+        return self.__class__(np.stack([f(s) for f in self.dim_funcs]), **kwargs)
 
     def initialize_column_vector(self, s):
         return arrays.ColumnVector([f(s) for f in self.dim_funcs])
@@ -257,11 +271,12 @@ class Contour(Curve):
     basis = utils.NoInputFunctionAlias('calc_basis', store=True)
     normal = utils.NoInputFunctionAlias('calc_normal', store=True)
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls, *args, write_end=False,  **kwargs):
         out = super().__new__(cls, *args, **kwargs)
-        return math.close_curve(out).view(cls)
+        return math.close_curve(out, write_end=write_end).view(cls)
 
-    def _initialize_splineparams(self, **kwargs):
+    def _initialize_splineparams(self, write_end=False, **kwargs):
+        self.write_end = write_end
         self.splineparams = {
             'per': True,
             'k': 3,
@@ -313,7 +328,7 @@ class Contour(Curve):
             close = False
 
         if close:
-            return self.initialize_class(s)
+            return self.initialize_class(s, write_end=self.write_end)
         else:
             return Curve(np.stack([f(s) for f in self.dim_funcs]))
 
@@ -377,11 +392,30 @@ class FlatContour(Contour):
         Flat contours are 3d contours which exist on a plane specified by a
         normal. Note: The contour is automatically converted to 3d
     """
-    def __new__(cls, *args, normal=None, **kwargs):
+    def __new__(cls, *args, normal=None, centroid=None, **kwargs):
 
         out = super().__new__(cls, *args, **kwargs)
-        centroid = out.centroid
-        centered = out - centroid
+        if centroid is None:
+            try:
+                centroid = out.centroid
+                centered = out - centroid
+            except:
+                temp = np.zeros((centroid.shape[0], out.shape[-1] ))
+                temp[:out.shape[0]] = out
+                out = temp
+                out = super().__new__(cls, out, **kwargs)
+                centroid = out.centroid
+                centered = out - centroid
+        else:
+            try:
+                centered = out - centroid
+            except:
+                temp = np.zeros((centroid.shape[0], out.shape[-1] ))
+                temp[:out.shape[0]] = out
+                out = temp
+                out = super().__new__(cls, out, **kwargs)
+                centered = out - centroid
+
         if normal is None:
             normal = math.approximate_normal(centered)
         normal = arrays.ColumnVector(normal)

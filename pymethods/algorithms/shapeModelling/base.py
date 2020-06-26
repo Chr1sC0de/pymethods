@@ -72,8 +72,8 @@ class PointDistributionModel(abc.ABC):
 
     def build(
             self, modes=10, eps=10**(-5), countCap=1000, costlimit=0,
-            scale=False
-            ):
+            scale=False, startShape=None
+        ):
         self.scaleFactor = 1
         shapes = self._shapeLoader()
         shapes = self._shapePreprocess(shapes)
@@ -82,7 +82,10 @@ class PointDistributionModel(abc.ABC):
         # center each shape
         centeredShapes = [surface - surface.mean(1, keepdims=True)
                           for surface in shapes]
-        firstInd = np.random.randint(len(centeredShapes))
+        if startShape == None:
+            firstInd = np.random.randint(len(centeredShapes))
+        else:
+            firstInd = startShape
         # set the randomly selected shape to the meanshape
         self.meanShape = centeredShapes[firstInd]
         # align the shapes to the selected mean shape

@@ -4,8 +4,10 @@ import numpy as np
 
 
 class Transfinite2d:
+
     def __init__(self, contour, refinement=None):
         assert isinstance(contour, Contour)
+
         self._contour = contour
 
         if refinement is None:

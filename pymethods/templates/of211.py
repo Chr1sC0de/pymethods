@@ -270,6 +270,51 @@ class P_OCT(_ZeroField):
         )
     ]
 
+
+class PipeNewtonianFixedNormal(_ZeroField):
+    __postFix__      = ''
+    fileObj          = 'U'
+    fileClass        = 'volVectorField'
+    varList =[
+        common.FileString_Var(dimensions = '[0 1 -1 0 0 0 0]'),
+        common.FileString_Var(internalField = 'uniform (0 0 0)'),
+        common.FileString_VarDict(
+            'boundaryField',
+            WALL   = common.FileString_VarDict(
+                None,
+                type       ='noSlip',
+            ),
+            INLET   = common.FileString_VarDict(
+                None,
+                type       = "surfaceNormalFixedValue",
+                refValue   = "0"
+            ),
+            OUTLET   = common.FileString_VarDict(
+                None,
+                type = 'zeroGradient'
+            )
+        )
+    ]
+    def __init__(self,
+        foamDirectory,
+        *,
+        velocity,
+        **kwargs):
+        super().__init__(foamDirectory,**kwargs)
+        self.boundaryField.INLET.refValue = self._generateVariablesString(velocity)
+
+    def _generateVariablesString(self, velocity):
+        return velocity
+
+    def make(self):
+        self.initializeFile()
+        self.appendToFile('\n')
+        self.appendToFile('body')
+        self.appendToFile('\n\n')
+        self.appendToFile('closeString')
+        return self
+
+
 class U_OCT_NEWTONIAN(_ZeroField):
     __postFix__      = '_NEWTONIAN'
     fileObj          = 'U'
@@ -305,13 +350,16 @@ class U_OCT_NEWTONIAN(_ZeroField):
         **kwargs):
         super().__init__(foamDirectory,**kwargs)
         self.boundaryField.OUTLET.variables = self._generateVariablesString(Qm,CC,inletArea)
+
     def _generateVariablesString(self,Qm,CC,Area):
         variables = \
             f'"Qm={Qm};CC={CC};PI=3.14159;cubicMeterPerSecond2mlPerMin=6e+07;Area={Area};centroid=sum(pos()*mag(Sf()))/sum(mag(Sf()));coordi=pos() - centroid;profile=-normal();"'
         return variables
+
     @property
     def pulsatileValueExpressionCommented(self):
         return r'valueExpression "(Qm-2.83586*cos((1*2*PI/CC)*time())+1.13367*sin((1*2*PI/CC)*time())-1.09937*cos((2*2*PI/CC)*time())-0.85915*sin((2*2*PI/CC)*time())+0.70761*cos((3*2*PI/CC)*time())-1.04898*sin((3*2*PI/CC)*time())+0.48890*cos((4*2*PI/CC)*time())+0.71584*sin((4*2*PI/CC)*time())-0.29543*cos((5*2*PI/CC)*time())-0.06778*sin((5*2*PI/CC)*time())+0.11454*cos((6*2*PI/CC)*time())+0.22741*sin((6*2*PI/CC)*time())-0.37011*cos((7*2*PI/CC)*time())-0.13848*sin((7*2*PI/CC)*time())+0.23613*cos((8*2*PI/CC)*time())-0.15284*sin((8*2*PI/CC)*time())-0.04670*cos((9*2*PI/CC)*time())+0.08242*sin((9*2*PI/CC)*time())+0.08075*cos((10*2*PI/CC)*time())-0.07041*sin((10*2*PI/CC)*time())+0.00550*cos((11*2*PI/CC)*time())+0.12147*sin((11*2*PI/CC)*time())-0.07736*cos((12*2*PI/CC)*time())-0.03547*sin((12*2*PI/CC)*time())+0.04093*cos((13*2*PI/CC)*time())-0.01490*sin((13*2*PI/CC)*time())-0.03809*cos((14*2*PI/CC)*time())+0.01484*sin((14*2*PI/CC)*time())+0.03868*cos((15*2*PI/CC)*time())-0.05287*sin((15*2*PI/CC)*time()))/cubicMeterPerSecond2mlPerMin/Area*profile";'
+
     def make(self):
         self.initializeFile()
         self.appendToFile('\n')
@@ -319,6 +367,7 @@ class U_OCT_NEWTONIAN(_ZeroField):
         self.appendToFile('\n\n')
         self.appendToFile('closeString')
         return self
+
 
 class U_OCT_QUEMADA(_ZeroField):
     __postFix__      = '_QUEMADA'
@@ -362,6 +411,7 @@ if __name__ == '__main__':
     fvSolutions   = FvSolutions(foamDirectory).make()
     tpProp        = TransportProperties_NewtonianQuemadaSwitch(foamDirectory).make()
     p             = P_OCT(foamDirectory).make()
+
     U_OCT(foamDirectory,1,1,1).make()
 
     print('done')

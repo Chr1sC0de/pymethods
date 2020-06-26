@@ -101,14 +101,30 @@ class CylindricalSurface(np.ndarray):
                     np.arange(contour_stack.shape[-1]-1), disable=not progress):
                 A = contour_stack[:, 0, i, None]
                 B = contour_stack[:, :, i+1]
-                distance = math.l2_norm(B-A)
+                distance = np.linalg.norm((B-A), axis=0)
                 argmin = np.argmin(distance.squeeze())
-                contour_stack[:, :, i+1] = np.roll(B, -argmin, axis=-1)
+                rolled = np.roll(B, -argmin, axis=-1)
+
+                prevContour = contour_stack[:, :, i]
+
+                check1 = np.linalg.norm(rolled - prevContour, axis=0).sum()
+                check2 = np.linalg.norm(rolled - np.flipud(prevContour.T).T, axis=0).sum()
+
+                if check1 > check2:
+                    rolled = np.flipud(rolled.T).T
+                    flipped = True
+
+                contour_stack[:, :, i+1] = rolled
                 # if a field is provided perform the same operation for the field
                 if field_grids is not None:
                     for grid_id in field_grids.keys():
-                        field_grids[grid_id][:, :, i+1] = np.roll(
+                        rolledField = np.roll(
                             field_grids[grid_id][:, :, i+1], -argmin, axis=-1)
+                        if flipped:
+                            rolledField = np.flipud(rolled.T).T
+                        field_grids[grid_id][:, :, i+1] = rolledField
+                
+                flipped = False
                 roll_data.append(argmin)
 
 

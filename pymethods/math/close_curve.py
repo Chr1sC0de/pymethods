@@ -5,7 +5,7 @@ def is_closed_curve(contour):
         return False
     return True
 
-def close_curve(contour: np.array) -> np.array:
+def close_curve(contour: np.array, write_end=False) -> np.array:
     """close_curve
 
     Assume input is a closed contour. Check the 0 and -1 indices.
@@ -17,8 +17,12 @@ def close_curve(contour: np.array) -> np.array:
     Returns:
         np.array: N dimension contour x M vectors or M + 1 vectors
     """
-    X_dims, _ = contour.shape
+
     if not np.allclose(contour[:, 0], contour[:, -1]):
-        contour = np.append(
-            contour, contour[:, 0, None], axis=-1)
+        if write_end:
+            contour[:, -1] = contour[:, 0]
+        else:
+            contour = np.append(
+                contour, contour[:, 0, None], axis=-1)
+
     return contour

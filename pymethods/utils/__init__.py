@@ -24,6 +24,8 @@ from .multiprocessing_tools import (
 )
 from .array_size import memory_size
 from .lim_gen import gap_space, make_odd
+from pathlib import Path
+
 
 def listZip(*args):
         return list(zip(*args))

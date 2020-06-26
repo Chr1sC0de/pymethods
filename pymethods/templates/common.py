@@ -63,6 +63,7 @@ class FileString_Var:
     def __repr__(self):
         return f'{self._name}={self._val};'
 
+
 class FoamDirectory:
     makeParents      = True
     allowedLocations = ['constant', 'system', 'polyMesh']

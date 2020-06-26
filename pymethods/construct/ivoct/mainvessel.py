@@ -139,11 +139,3 @@ class VesselSurface:
             centerline=self.required_centerline,
             basis=self.required_basis
         )
-
-
-if __name__ == "__main__":
-    path = pt.Path(r'D:\Github\pymethods\testsReconstruction\test_1')
-    reconstruction = VesselSurface(path)
-    reconstruction.construct(
-        mm_per_pixel=0.009356,
-        mm_per_frame=0.2).to_vtk().plot()
