@@ -65,7 +65,7 @@ class Angle(np.ndarray):
     def rad_to_deg(cls, radians: object) -> object:
         """
         """
-        return cls(        radians, units='radians').deg
+        return cls(radians, units='radians').deg
 
     def __repr__(self):
         mem_loc = utils.hex_memory(self)

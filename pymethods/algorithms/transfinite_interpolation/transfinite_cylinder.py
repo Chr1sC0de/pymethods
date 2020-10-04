@@ -6,6 +6,7 @@ import pyvista as pv
 
 
 class TransfiniteCylinder:
+
     def __init__(self, cylindrical_surface):
         assert isinstance(cylindrical_surface, CylindricalSurface)
         self._cylindrical_surface = cylindrical_surface
@@ -44,5 +45,3 @@ class TransfiniteCylinder:
         return pv.StructuredGrid(
             *self.pts_mesh(u, v, w)
         )
-
-

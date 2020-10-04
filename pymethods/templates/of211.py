@@ -105,21 +105,21 @@ class FvSchemes(_SystemDict):
             dict = {
                 'default' : 'Gauss linear',
                 'grad(p)' : 'Gauss linear'
-                }
+            }
         ),
         common.FileString_VarDict(
             'divSchemes',
             dict = {
-                'default'                      : 'none',
-                'div(phi,U)'                   : 'Gauss linearUpwind grad(U)',
-                'div(phi,nuTilda)'             : 'Gauss linearUpwind grad(nuTilda)',
+                'default'                       : 'none',
+                'div(phi,U)'                    : 'Gauss linearUpwind grad(U)',
+                'div(phi,nuTilda)'              : 'Gauss linearUpwind grad(nuTilda)',
                 r'div((nuEff*dev(T(grad(U)))))' : 'Gauss linear'
             }
         ),
         common.FileString_VarDict(
             'laplacianSchemes',
-            default                = 'none',
             dict = {
+                'default'                        : 'none',
                 'laplacian(nu,U)'                : 'Gauss linear corrected',
                 'laplacian(nuEff,U)'             : 'Gauss linear corrected',
                 'laplacian((1|A(U)),p)'          : 'Gauss linear corrected',
@@ -139,7 +139,7 @@ class FvSchemes(_SystemDict):
             default = 'corrected'
         ),
         common.FileString_VarDict(
-            'snGradSchemes',
+            'fluxRequired',
             default = 'no',
             p       = ''
         )
@@ -155,8 +155,8 @@ class FvSolutions(_SystemDict):
                 None,
                 solver          = 'PCG',
                 preconditioner  = 'DIC',
-                tolerance       =  1e-06,
-                relTol          =  1e-06,
+                tolerance       = 1e-06,
+                relTol          = 1e-06,
                 maxIter         = 3000
             ),
             U = common.FileString_VarDict(
@@ -169,21 +169,21 @@ class FvSolutions(_SystemDict):
         ),
         common.FileString_VarDict(
             'PISO',
-            nCorrectors = 2,
+            nCorrectors               = 2,
             nNonOrthogonalCorrectors  = 1,
-            pRefCell        = 0,
-            pRefValue       = 0
+            pRefCell                  = 0,
+            pRefValue                 = 0
         ),
         common.FileString_VarDict(
             'SIMPLE',
             nNonOrthogonalCorrectors  = 2,
-            pRefCell          = 0,
-            pRefValue         = 0,
-            residualControl   = common.FileString_VarDict(
-                    None,
-                    p  = 1e-5,
-                    U  = 1e-5,
-                    nuTilda = 1e-5,
+            pRefCell                  = 0,
+            pRefValue                 = 0,
+            residualControl = common.FileString_VarDict(
+                None,
+                p  = 1e-5,
+                U  = 1e-5,
+                nuTilda = 1e-5,
             )
         ),
         common.FileString_VarDict(
@@ -203,7 +203,9 @@ class FvSolutions(_SystemDict):
 class TransportProperties_NewtonianQuemadaSwitch(_ConstantDict):
     fileObj          = 'transportProperties'
     varList =[
-        common.FileString_Var(transportModel = 'Newtonian'),
+        common.FileString_Var(
+            transportModel = 'Newtonian'
+        ),
         common.FileString_Var(nu = 'nu [ 0 2 -1 0 0 0 0 ] 3.302E-06'),
         common.FileString_VarDict(
             'CrossPowerLawCoeffs',
@@ -264,7 +266,7 @@ class P_OCT(_ZeroField):
             ),
             OUTLET   = common.FileString_VarDict(
                 None,
-                type       = 'zeroGradient',
+                type       = 'fixedValue',
                 value      = 'uniform 0'
             )
         )
@@ -282,7 +284,8 @@ class PipeNewtonianFixedNormal(_ZeroField):
             'boundaryField',
             WALL   = common.FileString_VarDict(
                 None,
-                type       ='noSlip',
+                type        ='fixedValue',
+                value       ='uniform (0 0 0)',
             ),
             INLET   = common.FileString_VarDict(
                 None,
@@ -415,7 +418,3 @@ if __name__ == '__main__':
     U_OCT(foamDirectory,1,1,1).make()
 
     print('done')
-
-
-
-

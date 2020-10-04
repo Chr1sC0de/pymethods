@@ -34,7 +34,6 @@ class Meta:
         )
 
 
-Main = Meta('Main', 'bifCenterline1', 'CrossSectionEllipseSet1')
-
+Main  = Meta('Main', 'bifCenterline1', 'CrossSectionEllipseSet1')
 Bifur = Meta('Bifur', 'bifCenterline2', 'CrossSectionEllipseSet2')
 

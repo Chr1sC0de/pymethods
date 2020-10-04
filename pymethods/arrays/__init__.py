@@ -15,11 +15,12 @@ from .PointsurfaceShapes import (
 from .FieldCurve import (
     FieldMixin, FieldCurve, FieldContour
 )
+from . import contourshapes as contourShapes
 
 __all__ = [
     'Angle', 'Vector', 'Basis', 'Vectorspace', 'Pointsurface',
     'Disk', 'Cylinder', 'CylinderSurfaceProperties', 'Ellipsoid',
     'EllipsoidSurfaceProperties', 'Sphere', 'Torus',
     'TorusSurfaceProperties', 'ColumnVector', 'Array', 'Curve', 'Contour',
-    'FlatContour', 'structured'
+    'FlatContour', 'structured', 'contourshapes'
 ]

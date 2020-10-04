@@ -3,9 +3,12 @@ import numpy as np
 
 class np_stats_descriptor:
 
-    def __init__(self, name, *args, **kwargs):
+    def __init__(self, name, *args, extension=None, **kwargs):
         self.name = name
-        self.set_name = f'_{name}'
+        if extension is None:
+            self.set_name = f'_{name}'
+        else:
+            self.set_name = f'_{name}_{extension}'
         self.kwargs = kwargs
         self.args = args
 
@@ -35,8 +38,8 @@ class SummaryStatistics:
     std = np_stats_descriptor('std')
     var = np_stats_descriptor('var')
     median = np_stats_descriptor('median')
-    q_25 = np_stats_descriptor('quantile', 0.25)
-    q_75 = np_stats_descriptor('quantile', 0.75)
+    q_25 = np_stats_descriptor('quantile', 0.25, extension=25)
+    q_75 = np_stats_descriptor('quantile', 0.75, extension=75)
     max = np_stats_descriptor('amax')
     min = np_stats_descriptor('amin')
     

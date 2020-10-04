@@ -4,6 +4,7 @@ except ImportError:
     from .. import arrays
     from .. import math
     from .. import utils
+
 import numpy as np
 from collections import deque
 import scipy.interpolate as sci
@@ -30,9 +31,16 @@ class Curve(arrays.Vectorspace):
     s_tot = utils.NoInputFunctionAlias('total_arc_length', store=True)
     s_frac = utils.NoInputFunctionAlias('fraction_per_point', store=True)
 
+    _spline_kwarg_names = [
+        "w", "xb", "xe", "k", "task", "s", "t", "full_output", "per", "quiet"]
+
     def __init__(self, *args, normal=None, centroid=None, **kwargs) -> None:
         reparam_curve = kwargs.pop('reparam_curve', None)
-        self._initialize_splineparams(**kwargs)
+        spline_params = {
+            name: kwargs[name] for name in
+            self._spline_kwarg_names if name in kwargs.keys()
+        }
+        self._initialize_splineparams(**spline_params)
         self.initialize_funcs()
         self._splinify(reparam=reparam_curve)
 
@@ -55,9 +63,9 @@ class Curve(arrays.Vectorspace):
         arcdistance = np.zeros(self.shape[-1])
         arcdistance = np.cumsum(self.delta_per_point())
         return arcdistance
-    
+
     def curvature(self):
-        sOriginal = self.s_frac 
+        sOriginal = self.s_frac
         sEquallySpaced = np.linspace(0,1, self.shape[-1]*50)
         points = self(sEquallySpaced)
         dxdt = v = np.gradient(points, axis=1)
@@ -224,7 +232,10 @@ class Curve(arrays.Vectorspace):
         self.dim_funcs = deque()
 
     def initialize_class(self, s, **kwargs):
-        return self.__class__(np.stack([f(s) for f in self.dim_funcs]), **kwargs)
+        if len(s.shape) == 0:
+            return arrays.Vector(np.stack([f(s) for f in self.dim_funcs]), **kwargs)
+        else:
+            return self.__class__(np.stack([f(s) for f in self.dim_funcs]), **kwargs)
 
     def initialize_column_vector(self, s):
         return arrays.ColumnVector([f(s) for f in self.dim_funcs])
@@ -262,6 +273,17 @@ class Curve(arrays.Vectorspace):
 
     def to_vtk(self):
         return pv.Spline(self.T)
+
+    def quarter(self, c0=0, c1=0.25, c2=0.5, c3=0.75, c4=1, npts=100):
+        output = []
+        output.append(np.linspace(c0, c1, npts))
+        output.append(np.linspace(c1, c2, npts))
+        output.append(np.linspace(c2, c3, npts))
+        output.append(np.linspace(c3, c4, npts))
+        return output
+
+    def split(self, pos, npts=100):
+        return self(np.linspace(0, pos, npts)), self(np.linspace(pos, 1, npts))
 
 
 class Contour(Curve):
@@ -377,14 +399,17 @@ class Contour(Curve):
         return cls(np.stack([x, y], axis=0)).make_3d() + arrays.ColumnVector(centroid).make_3d()
 
     def area_assumed_diameter(self):
-        return 2*np.sqrt(self.area/np.pi)
+        return 2 * np.sqrt(self.area/np.pi)
 
-    # def make2d(self, returnBackwards=True):
-    #     centroid = self.centroid
-    #     basis = self.basis
-
-    #     if returnBackwards:
-    #         return transformed, (centroid, basis)
+    def transfinite_quarter(
+        self, c0=0, c1=0.25, c2=0.5, c3=0.75, c4=1, npts=100
+    ):
+        output = []
+        output.append(self(np.linspace(c0, c1, npts)))
+        output.append(self(np.linspace(c1, c2, npts)))
+        output.append(self(np.linspace(c3, c2, npts)))
+        output.append(self(np.linspace(c4, c3, npts)))
+        return output
 
 
 class FlatContour(Contour):
@@ -436,9 +461,6 @@ class FlatContour(Contour):
             return arrays.Vector(math.normalize(k_test))
         else:
             return arrays.Vector(math.normalize(-k_test))
-
-
-
 
 
 if __name__ == "__main__":

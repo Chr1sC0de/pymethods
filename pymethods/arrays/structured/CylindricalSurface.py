@@ -123,7 +123,7 @@ class CylindricalSurface(np.ndarray):
                         if flipped:
                             rolledField = np.flipud(rolled.T).T
                         field_grids[grid_id][:, :, i+1] = rolledField
-                
+
                 flipped = False
                 roll_data.append(argmin)
 

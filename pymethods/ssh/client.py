@@ -36,7 +36,7 @@ class Client:
             if remoteTries > self.retryLimit:
                 raise ConnectionError(
                     "Number of retries, %d, greater than retry limit %d, \
-                        cannot connect"%(remoteTries, retryLimit))
+                        cannot connect"%(remoteTries, self.retryLimit))
             logging.info('Retrying Connect')
             self.connect(remoteTries=remoteTries)
 
@@ -66,7 +66,7 @@ class Client:
                 self.connect()
             logging.info('Retrying Copy Local %s To Remote %s'%(localFolder, remoteFolder))
             if remoteTries > self.retryLimit:
-                raise ConnectionError("Number of retries, %d, greater than retry limit %d"% (remoteTries, retryLimit) )
+                raise ConnectionError("Number of retries, %d, greater than retry limit %d"% (remoteTries, self.retryLimit) )
             self.copyLocalToRemote_Directory(localFolder, remoteFolder, remoteTries=remoteTries)
 
     def copyRemoteToLocal_Directory(self, remoteFolder, localFolder, remoteTries=0):
@@ -101,8 +101,11 @@ class FOAM(Client):
         self.localFoam = _pt.Path(localFoam)
         self.remoteMain = _pt.Path(remoteMain)
         self.remoteFoam = self.remoteMain/self.localFoam.name
+        # self.job_template = kwargs.get(
+        #     'job_template', job_templates.spartanQuemada
+        # )
         self.job_template = kwargs.get(
-            'job_template', job_templates.spartanQuemada
+            'job_template', None
         )
         super().__init__(host, **kwargs)
 
@@ -128,7 +131,7 @@ class FOAM(Client):
 
     def run_foam(self, sleep_time=100):
         _, stdout, stderr = self.ssh.exec_command(
-            "cd %s; sbatch submit.slurm"%((self.remoteFoam/'foam').as_posix())
+            "cd %s; sbatch submit.slurm"%((self.remoteFoam).as_posix())
         )
 
         stderr = stderr.read()
@@ -180,7 +183,8 @@ class FOAM(Client):
             )
 
     def quick_run(self):
-        self.make_job_script()
+        if self.job_template is not None:
+            self.make_job_script()
         self.copyLocalToRemote_Directory()
         self.run_foam()
         self.copyRemoteToLocal_Directory()
@@ -202,7 +206,3 @@ class MetaClient(type):
         return newclass
 
 SpartanFOAM = MetaClient("SpartanFOAM", "spartan.hpc.unimelb.edu.au", FOAM)
-
-
-
-

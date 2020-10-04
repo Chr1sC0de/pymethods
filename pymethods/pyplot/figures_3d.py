@@ -1,4 +1,5 @@
 import matplotlib as mp
+import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from pymethods import math
@@ -131,6 +132,8 @@ def quiver3d(*args, ax=None, **kwargs):
     else:
         if not is_ax_3d(ax):
             f, ax = gcfa3d()
+        else:
+            f = plt.gcf()
     obj = ax.quiver(*args, **kwargs)
     return f, ax, obj
 
@@ -151,6 +154,8 @@ def plot3d(*args, ax=None, **kwargs):
     else:
         if not is_ax_3d(ax):
             f, ax = gcfa3d()
+        else:
+            f = plt.gcf()
     obj = ax.plot(*args, **kwargs)
     return f, ax, obj
 

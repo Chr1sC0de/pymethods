@@ -1,17 +1,34 @@
 # pymethods
-coronary artery reconstruction from OCT + angiography or simply angiography
 
-Angiography data has been extracted via QAngio XA 3D RE, (Medis, Leiden, the Netherlands), whilst OCT data has been extracted via QIvus (version 3.0, Medis Medical Imaging, Leiden, the Netherlands).
+ A library for coronary artery reconstruction from angriography, OCT + angiography,
+ statistical shape modelling, CFD mesh generation and surface unwrapping.
+
+Angiography data has been extracted via QAngio XA 3D RE,
+(Medis, Leiden, the Netherlands), whilst OCT data has been extracted via QIvus
+(version 3.0, Medis Medical Imaging, Leiden, the Netherlands).
+
+## Angiography Surface Generation
+![alt](./images/Angiography.PNG)
+## Angiography + OCT Surface Generation
+![alt](./images/oct_and_angiography.PNG)
+## Statistical Shape Modelling
+![alt](./images/ssm.PNG)
+## Surface Unwrapping
+![alt](./images/unwrapping.PNG)
 
 # Installation
 
-to unwrap the cylindrical meshes the python bindings found in `CGALUMethods <https://github.com/Chr1sC0de/CGALUnwrapper>`_ should be installed. The methods can be imported via
+to unwrap the cylindrical meshes the python bindings found in
+`CGALUMethods <https://github.com/Chr1sC0de/CGALUnwrapper>`_ should be
+importable. A version which works with python 3.7 is included. At
+the moment CGALMethods does not work with python 3.8 and above.
 
 ````
 from pymethods import CGALMethods as CM
 ````
 
-To generate meshes for CFD the `pointwise <https://www.pointwise.com/>`_ must be installed.
+To generate meshes for CFD the `pointwise <https://www.pointwise.com/>`_
+must be installed.
 
 to install requirements
 ````

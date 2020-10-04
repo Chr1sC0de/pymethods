@@ -76,10 +76,10 @@ class Basis(Vector):
     @classmethod
     def _new_hook_post_parse(self, out):
         out = math.normalize(out)
-        if not math.is_linearly_dependent(out):
-            logging.info("supplied vectors are not linearly independent.\
-                Approximating a linearly independent basis")
-            out = math.make_linearly_independent(out)
+        # if math.is_linearly_dependent(out):
+        #     logging.debug("supplied vectors are not linearly independent.\
+        #         Approximating a linearly independent basis")
+        #     out = math.make_linearly_independent(out)
         return out
 
     def quiverly(self, *args, **kwargs

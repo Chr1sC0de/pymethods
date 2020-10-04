@@ -25,25 +25,34 @@ class SpartanFOAM:
         foam_folders = self.foam_folders.copy()
 
         n = 0
+        if self.max_jobs > 1:
+            while len(foam_folders) > 0:
 
-        while len(foam_folders) > 0:
+                while len(processes) < self.max_jobs:
 
-            while len(processes) < self.max_jobs:
+                    if not len(foam_folders) == 0:
+                        p = mp.Process(
+                            target=remote_runner, 
+                            args=(
+                                foam_folders.pop(0), 
+                                remote, self._username, self._password
+                            )
+                        )
+                        p.start()
+                        processes[n] = p
+                        n += 1
+                    else:
+                        break
 
-                if not len(foam_folders) == 0:
-                    p = mp.Process(
-                        target=remote_runner, args=(foam_folders.pop(0), remote, self._username, self._password)
-                    )
-                    p.start()
-                    processes[n] = p
-                    n += 1
-                else:
-                    break
+                keys = list(processes.keys())
 
-            keys = list(processes.keys())
-
-            for key in keys:
-                p = processes[key]
-                if not p.is_alive():
-                    p.join()
-                    del processes[key]
+                for key in keys:
+                    p = processes[key]
+                    if not p.is_alive():
+                        p.join()
+                        del processes[key]
+        else:
+            remote_runner(
+                foam_folders.pop(0), 
+                remote, self._username, self._password
+            )

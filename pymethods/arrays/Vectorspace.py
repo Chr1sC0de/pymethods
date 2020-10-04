@@ -14,8 +14,12 @@ class Vectorspace(Basis):
     @classmethod
     def _parse_single_arg(cls, array: np.ndarray) -> np.ndarray:
         out = np.array(array)
+        if utils.len_shape(out) == 1:
+            out = out[:, None]
+
         assert utils.len_shape(out) == 2, \
             "The lenshape of the input must be 2"
+
         out = np.asarray(out)
         return out
 

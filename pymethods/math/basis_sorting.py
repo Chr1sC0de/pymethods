@@ -81,7 +81,7 @@ def argSortByBasis(array, ref_basis, n_to_check=20):
         sorted_ids = np.flipud(sorted_ids)
         sorted_ids = np.roll(sorted_ids, 1)
 
-    return sorted_ids
+    return np.array([int(i) for i in sorted_ids])
 
 
 def sortByBasis(self, returnBasis=False, ref_basis=None):

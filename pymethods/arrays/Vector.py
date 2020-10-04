@@ -297,6 +297,11 @@ class Vector(np.ndarray):
         """
         return pyplot.plot3d(*self, *args, **kwargs)
 
+    def plot2d(self, *args, **kwargs):
+        """
+        """
+        return pyplot.plot(*self, *args, **kwargs)
+
     def quiver3d(self, *args, origin=None, **kwargs):
         """
         """
@@ -308,6 +313,11 @@ class Vector(np.ndarray):
         ax.scatter(*origin, alpha=0)
         ax.scatter(*(self.squeeze()+origin), alpha=0)
         return f, ax, obj
+
+    def quiver2d(self, *args, **kwargs):
+        """
+        """
+        return pyplot.quiver(*self, *args, **kwargs)
 
     def to_vtk(self, method='pyvista', origin=[0,0,0]):
         """
