@@ -1,7 +1,8 @@
 # pymethods
 
  A library for coronary artery reconstruction from angriography, OCT + angiography,
- statistical shape modelling, CFD mesh generation and surface unwrapping.
+ statistical shape modelling, CFD mesh generation, surface unwrapping and mesh
+ reparameterization.
 
 Angiography data has been extracted via QAngio XA 3D RE,
 (Medis, Leiden, the Netherlands), whilst OCT data has been extracted via QIvus
@@ -15,6 +16,8 @@ Angiography data has been extracted via QAngio XA 3D RE,
 ![alt](./images/ssm.PNG)
 ## Surface Unwrapping
 ![alt](./images/unwrapping.PNG)
+## Mesh Reparameterization to Structured Domains
+![alt](./images/mesh_reparameterization)
 
 # Installation
 
