@@ -1,8 +1,13 @@
 # pymethods
 
- A library for coronary artery reconstruction from angriography, OCT + angiography,
- statistical shape modelling, CFD mesh generation, surface unwrapping and mesh
- reparameterization.
+ A library for coronary artery reconstruction from angriography, OCT + angiography, (specifically for CFD usage)
+ statistical shape modelling, CFD mesh generation and surface unwrapping.
+
+ IVOCT + Angiography fusion method is based off the following work:
+
+ Athanasiou LS, Bourantas CV, Siogkas PK, et al. 3D reconstruction of coronary arteries using frequency domain optical coherence tomography images and biplane angiography. Proceedings: Engineering in Medicie and Biology Society (EMBC), 2012 Annual International Conference of the IEEE. San Diego (CA): IEEE, 2012. p. 2647–2650.
+
+ https://ieeexplore.ieee.org/abstract/document/6346508/
 
 Angiography data has been extracted via QAngio XA 3D RE,
 (Medis, Leiden, the Netherlands), whilst OCT data has been extracted via QIvus
