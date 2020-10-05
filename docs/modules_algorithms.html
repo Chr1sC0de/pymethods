@@ -82,6 +82,8 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_examples.html">Examples</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="modules_parse.html">parse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
@@ -95,6 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules_arrays.html">arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_utils.html">utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_math.html">math</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
 </ul>
@@ -240,6 +243,11 @@ point_basis (np.ndarray): Nx3x3</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.explained_variance">
+<code class="sig-name descname">explained_variance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.explained_variance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.recoverDimensions">
 <code class="sig-name descname">recoverDimensions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.NDSpace.recoverDimensions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -258,7 +266,12 @@ point_basis (np.ndarray): Nx3x3</p>
 
 <dl class="py method">
 <dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.build">
-<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modes</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">eps</span><span class="o">=</span><span class="default_value">1e-05</span></em>, <em class="sig-param"><span class="n">countCap</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">costlimit</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.build" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modes</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">eps</span><span class="o">=</span><span class="default_value">1e-05</span></em>, <em class="sig-param"><span class="n">countCap</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">costlimit</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">startShape</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pymethods.algorithms.shapeModelling.PointDistributionModel.explained_variance">
+<code class="sig-name descname">explained_variance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.shapeModelling.PointDistributionModel.explained_variance" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -322,36 +335,6 @@ point_basis (np.ndarray): Nx3x3</p>
 <dd><dl class="py method">
 <dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.contour">
 <em class="property">property </em><code class="sig-name descname">contour</code><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.contour" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_uniform">
-<code class="sig-name descname">mesh_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">npts_U</span></em>, <em class="sig-param"><span class="n">npts_V</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_uniform" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_vtk">
-<code class="sig-name descname">mesh_vtk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">U</span></em>, <em class="sig-param"><span class="n">V</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.mesh_vtk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh">
-<code class="sig-name descname">pts_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">U</span></em>, <em class="sig-param"><span class="n">V</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column">
-<code class="sig-name descname">pts_mesh_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">U</span></em>, <em class="sig-param"><span class="n">V</span></em>, <em class="sig-param"><span class="n">return_params</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column_uniform">
-<code class="sig-name descname">pts_mesh_column_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">npts_U</span></em>, <em class="sig-param"><span class="n">npts_V</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_column_uniform" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_uniform">
-<code class="sig-name descname">pts_mesh_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">npts_U</span></em>, <em class="sig-param"><span class="n">npts_V</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymethods.algorithms.transfinite_interpolation.Transfinite2d.pts_mesh_uniform" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

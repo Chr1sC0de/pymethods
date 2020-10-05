@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pyplot" href="modules_pyplot.html" />
-    <link rel="prev" title="arrays" href="modules_arrays.html" /> 
+    <link rel="prev" title="utils" href="modules_utils.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,6 +82,8 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_examples.html">Examples</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="modules_parse.html">parse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_construct.html">construct</a></li>
@@ -89,6 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="modules_multiprocess.html">multiprocess</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_algorithms.html">algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_arrays.html">arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules_utils.html">utils</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">math</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules_pyplot.html">pyplot</a></li>
 </ul>
@@ -294,7 +297,7 @@ angle (np.float): radians, angle to rotate around vector right hand</p>
 
 <dl class="py function">
 <dt id="pymethods.math.cart2pol">
-<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">cart2pol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.cart2pol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">cart2pol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">returnRad</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.cart2pol" title="Permalink to this definition">¶</a></dt>
 <dd><p>convert N x 2 nd array from cartesian to polar</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>vectors (np.array): 2 dimensions x M vectors</p>
@@ -520,7 +523,7 @@ with the magnitude of a vector.</p>
 
 <dl class="py function">
 <dt id="pymethods.math.close_curve">
-<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">close_curve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.close_curve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pymethods.math.</code><code class="sig-name descname">close_curve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">contour</span><span class="p">:</span> <span class="n">numpy.array</span></em>, <em class="sig-param"><span class="n">write_end</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#pymethods.math.close_curve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assume input is a closed contour. Check the 0 and -1 indices.
 If they are not the same append 0 to the array</p>
 <dl class="simple">
@@ -671,7 +674,7 @@ as the orientation will be flipped. Defaults to 20.</p>
         <a href="modules_pyplot.html" class="btn btn-neutral float-right" title="pyplot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="modules_arrays.html" class="btn btn-neutral float-left" title="arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="modules_utils.html" class="btn btn-neutral float-left" title="utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

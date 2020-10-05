@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quickstart" href="2_examples.html" />
+    <link rel="next" title="Examples" href="2_examples.html" />
     <link rel="prev" title="Pymethods documentation" href="index.html" /> 
 </head>
 
@@ -87,7 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#new-users">new users</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="2_examples.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
 </ul>
 
@@ -155,12 +155,25 @@
             
   <div class="section" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>coronary artery reconstruction from OCT + angiography or simply angiography</p>
-<p>Angiography data has been extracted via QAngio XA 3D RE, (Medis, Leiden, the Netherlands),
-whilst OCT data has been extracted via QIvus (version 3.0, Medis Medical Imaging, Leiden, the Netherlands).</p>
+<p>A library for coronary artery reconstruction from angriography, OCT + angiography,
+(specifically for CFD usage) statistical shape modelling, CFD mesh generation and
+surface unwrapping.</p>
+<p>IVOCT + Angiography fusion method is based off the following work:</p>
+<p>Athanasiou LS, Bourantas CV, Siogkas PK, et al. 3D reconstruction of coronary
+arteries using frequency domain optical coherence tomography images and biplane
+angiography. Proceedings: Engineering in Medicine and Biology Society (EMBC), 2012
+Annual International Conference of the IEEE. San Diego (CA): IEEE, 2012. p.
+2647–2650.</p>
+<p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/6346508/">https://ieeexplore.ieee.org/abstract/document/6346508/</a></p>
+<p>Angiography data has been extracted via QAngio XA 3D RE, (Medis, Leiden, the
+Netherlands), whilst OCT data has been extracted via QIvus (version 3.0, Medis
+Medical Imaging, Leiden, the Netherlands).</p>
 <div class="section" id="installation">
 <h2>installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>To install the necessary requirements,</p>
+<p>to unwrap the cylindrical meshes the python bindings found in <a class="reference external" href="https://github.com/Chr1sC0de/CGALUnwrapper">CGALUMethods</a> should be installed.
+The methods can be imported via</p>
+<p>To generate meshes for CFD the <a class="reference external" href="https://www.pointwise.com/">pointwise</a> must be installed.</p>
+<p>To install the necessary python requirements,</p>
 <div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -187,7 +200,7 @@ whilst OCT data has been extracted via QIvus (version 3.0, Medis Medical Imaging
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="2_examples.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="2_examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Pymethods documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

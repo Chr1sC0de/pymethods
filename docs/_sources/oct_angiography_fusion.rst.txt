@@ -1,8 +1,8 @@
 OCT+Angiography Fusion
 ----------------------
 
-Angiography data extracted via QAngio XA 3D RE and CT data that has been extracted via QIvus
-can be read and meshed quickly through the construct module,
+Angiography data extracted via QAngio XA 3D RE and OCT data that has been extracted via QIvus
+can be read, combined and meshed quickly through the construct module,
 
 
 .. code-block:: python

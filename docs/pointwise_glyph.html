@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>OCT+Angiography Fusion &mdash; pymethods 1.0.0 documentation</title>
+  <title>Pointwise Glyphs for Automatic Mesh Generation &mdash; pymethods 1.0.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creating a Statistical Shape Model" href="statistical_shape_modelling.html" />
-    <link rel="prev" title="Angiography Reconstruction" href="angiography_reconstruction.html" /> 
+    <link rel="next" title="Unwrapping Cylindrical Meshes to Structured Grids" href="unwrapping.html" />
+    <link rel="prev" title="Creating a Statistical Shape Model" href="statistical_shape_modelling.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,9 +85,9 @@
 <li class="toctree-l1"><a class="reference internal" href="1_quickstart.html">Quickstart</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="2_examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="angiography_reconstruction.html">Angiography Reconstruction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">OCT+Angiography Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oct_angiography_fusion.html">OCT+Angiography Fusion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistical_shape_modelling.html">Creating a Statistical Shape Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pointwise_glyph.html">Pointwise Glyphs for Automatic Mesh Generation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pointwise Glyphs for Automatic Mesh Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unwrapping.html">Unwrapping Cylindrical Meshes to Structured Grids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curvature.html">Curvature Calculation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transfinite_interpolation.html">Transfinte Interpolation</a></li>
@@ -142,13 +142,13 @@
         
           <li><a href="2_examples.html">Examples</a> &raquo;</li>
         
-      <li>OCT+Angiography Fusion</li>
+      <li>Pointwise Glyphs for Automatic Mesh Generation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/oct_angiography_fusion.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/pointwise_glyph.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -161,35 +161,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="oct-angiography-fusion">
-<h1>OCT+Angiography Fusion<a class="headerlink" href="#oct-angiography-fusion" title="Permalink to this headline">¶</a></h1>
-<p>Angiography data extracted via QAngio XA 3D RE and OCT data that has been extracted via QIvus
-can be read, combined and meshed quickly through the construct module,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymethods</span> <span class="k">as</span> <span class="nn">pma</span>
-<span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">pt</span>
+  <div class="section" id="pointwise-glyphs-for-automatic-mesh-generation">
+<h1>Pointwise Glyphs for Automatic Mesh Generation<a class="headerlink" href="#pointwise-glyphs-for-automatic-mesh-generation" title="Permalink to this headline">¶</a></h1>
+<p>To allow for easier automation and consistent CFD mesh generation the <cite>templates.make_glf_stl_to_foammake_glf_stl_to_foam</cite> can be used,</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymethods</span> <span class="k">as</span> <span class="nn">pma</span>
 
-<span class="n">path</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../../Datasets/test_1&#39;</span><span class="p">)</span>
-<span class="n">construct_vessel</span> <span class="o">=</span> <span class="n">pma</span><span class="o">.</span><span class="n">construct</span><span class="o">.</span><span class="n">ivoct</span><span class="o">.</span><span class="n">VesselSurface</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="n">surface</span> <span class="o">=</span> <span class="n">construct_vessel</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span>
-   <span class="n">mm_per_frame</span><span class="o">=</span><span class="n">mm_per_frame</span><span class="p">,</span>
-   <span class="n">mm_per_pixel</span><span class="o">=</span><span class="n">mm_per_pixel</span><span class="p">,</span>
-   <span class="n">processors</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-   <span class="n">surface_filter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
-   <span class="n">interpolate_contours</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span>
-   <span class="n">centerlineResolution</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+<span class="n">pma</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">make_glf_stl_to_foam</span><span class="p">(</span>
+   <span class="s1">&#39;./shape.stl&#39;</span><span class="p">,</span>
+   <span class="n">delta_s</span>                       <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+   <span class="n">TRexGrowthRate1</span>               <span class="o">=</span> <span class="mf">1.3</span><span class="p">,</span>
+   <span class="n">TRexGrowthRate</span>                <span class="o">=</span> <span class="mf">1.1</span><span class="p">,</span>
+   <span class="n">TRexMaximumLayers</span>             <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
+   <span class="n">TRexSkewCriteriaMaximumAngle1</span> <span class="o">=</span> <span class="mi">180</span><span class="p">,</span>
+   <span class="n">TRexSkewCriteriaMaximumAngle</span>  <span class="o">=</span> <span class="mi">170</span><span class="p">,</span>
+   <span class="n">setSpacing</span>                    <span class="o">=</span> <span class="mf">0.025</span><span class="p">,</span>
+   <span class="n">polymesh_folder</span>               <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+   <span class="n">pointwise_name</span>                <span class="o">=</span> <span class="s1">&#39;foam_project.pw&#39;</span><span class="p">,</span>
+   <span class="n">file_name</span>                     <span class="o">=</span> <span class="s1">&#39;stl_to_foam.glf&#39;</span>
 <span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">BackgroundPlotter</span><span class="p">()</span>
-<span class="n">mesh</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">to_vtk</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>where mm_per_frame and mm_per_pixel are provided by the user.</p>
-<p>processors defines how may processsors to be used during image parsing</p>
-<p>the surface_filters is the window size used to smooth the surface</p>
-<p>interpolate_contours are total points per contour</p>
-<p>centerlineResolutions is the smallest distance between cross sectional contours along the surface</p>
+<p>The above code will generate a pointwise glyph which automates the construction of an OpenFoam mesh in pointwise.
+Running the glyph will automatically call pointwise, creating the pointwise polymesh in the folder specified by the user before closing.</p>
 </div>
 
 
@@ -200,10 +193,10 @@ can be read, combined and meshed quickly through the construct module,</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="statistical_shape_modelling.html" class="btn btn-neutral float-right" title="Creating a Statistical Shape Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="unwrapping.html" class="btn btn-neutral float-right" title="Unwrapping Cylindrical Meshes to Structured Grids" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="angiography_reconstruction.html" class="btn btn-neutral float-left" title="Angiography Reconstruction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="statistical_shape_modelling.html" class="btn btn-neutral float-left" title="Creating a Statistical Shape Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

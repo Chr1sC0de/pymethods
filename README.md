@@ -55,4 +55,5 @@ python -m pip install -e .
 ````
 
 # Examples
-in depth examples are located in the ./testsJupyter folder
+
+in depth examples are located in the ./testsJupyter folder, TBD
