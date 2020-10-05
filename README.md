@@ -22,7 +22,7 @@ Angiography data has been extracted via QAngio XA 3D RE,
 ## Surface Unwrapping
 ![alt](./images/unwrapping.PNG)
 ## Mesh Reparameterization to Structured Domains
-![alt](./images/mesh_reparameterization)
+![alt](./images/mesh_reparameterization.PNG)
 
 # Installation
 
