@@ -113,6 +113,8 @@ class CylindricalSurface(np.ndarray):
                 if check1 > check2:
                     rolled = np.flipud(rolled.T).T
                     flipped = True
+                else :
+                    flipped = False
 
                 contour_stack[:, :, i+1] = rolled
                 # if a field is provided perform the same operation for the field

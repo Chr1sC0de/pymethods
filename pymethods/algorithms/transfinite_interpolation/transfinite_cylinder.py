@@ -41,6 +41,18 @@ class TransfiniteCylinder:
             3,-1
         ))
 
+    def pts_mesh_uniform(self, npts_U, npts_V, npts_W, **kwargs):
+        '''
+        create a parameterized mesh with the specified number of points per axes,
+        equally spaced along the square domain
+        '''
+        return self.pts_mesh(
+            np.linspace(0, 1, npts_U),
+            np.linspace(0, 1, npts_V),
+            np.linspace(0, 1, npts_W),
+            **kwargs
+        )
+
     def mesh_vtk(self, u, v, w):
         return pv.StructuredGrid(
             *self.pts_mesh(u, v, w)

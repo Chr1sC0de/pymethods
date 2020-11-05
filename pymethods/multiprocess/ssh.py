@@ -32,9 +32,9 @@ class SpartanFOAM:
 
                     if not len(foam_folders) == 0:
                         p = mp.Process(
-                            target=remote_runner, 
+                            target=remote_runner,
                             args=(
-                                foam_folders.pop(0), 
+                                foam_folders.pop(0),
                                 remote, self._username, self._password
                             )
                         )
@@ -53,6 +53,6 @@ class SpartanFOAM:
                         del processes[key]
         else:
             remote_runner(
-                foam_folders.pop(0), 
+                foam_folders.pop(0),
                 remote, self._username, self._password
             )

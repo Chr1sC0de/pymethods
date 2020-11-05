@@ -101,9 +101,6 @@ class FOAM(Client):
         self.localFoam = _pt.Path(localFoam)
         self.remoteMain = _pt.Path(remoteMain)
         self.remoteFoam = self.remoteMain/self.localFoam.name
-        # self.job_template = kwargs.get(
-        #     'job_template', job_templates.spartanQuemada
-        # )
         self.job_template = kwargs.get(
             'job_template', None
         )

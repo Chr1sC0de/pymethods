@@ -54,7 +54,7 @@ class FieldMixin:
         self.dim_funcs = deque()
         self.field_funcs = deque()
 
-    def initialize_class(self, s):
+    def initialize_class(self, s, **kwargs):
         return self.__class__(
             np.stack([f(s) for f in self.dim_funcs]),
             fields = dict(

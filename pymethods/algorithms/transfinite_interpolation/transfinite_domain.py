@@ -17,7 +17,7 @@ class TransfiniteDomain:
 
             minus = (1-u)*(1-v) * p_12 + u*v*p_34 + u*(1-v)*p_14 + (1-u)*v*p_32
 
-            return plus - minus
+            return plus.squeeze() - minus.squeeze()
 
         self._interpolator = interpolator
 
@@ -54,6 +54,10 @@ class TransfiniteDomain:
             return self.pts_mesh_column(U, V, **kwargs).reshape(3, n_x, n_y)
 
     def pts_mesh_uniform(self, npts_U, npts_V, **kwargs):
+        '''
+        create a parameterized mesh with the specified number of points per axes,
+        equally spaced along the square domain
+        '''
         return self.pts_mesh(
             np.linspace(0, 1, npts_U),
             np.linspace(0, 1, npts_V), **kwargs

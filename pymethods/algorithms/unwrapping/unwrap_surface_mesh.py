@@ -10,8 +10,10 @@ except:
 
 def get_centerline_from_cylindrical_mesh(surface_mesh, inlet_origin=None):
 
+    # surface mesh is the path to the surface mesh
+
     if inlet_origin is not None:
-        unwrapped = CM.unwrap_cylindrical_surface_mesh(surface_mesh,*inlet_origin)
+        unwrapped = CM.unwrap_cylindrical_surface_mesh(surface_mesh, *inlet_origin)
     else:
         unwrapped = CM.unwrap_cylindrical_surface_mesh(surface_mesh)
 
@@ -139,4 +141,5 @@ def unwrap_cylindrical_vtk_using_centerline(
 
 if __name__ == "__main__":
     vtk_path = pt.Path(r"I:\vtkData\00001\WALL\WALL_400.vtk")
-    unwrap_cylindrical_vtk_using_centerline(vtk_path)
+    unwrapped = unwrap_cylindrical_vtk_using_centerline(vtk_path)
+    pass
