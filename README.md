@@ -1,7 +1,7 @@
 # pymethods
 
  A library for coronary artery reconstruction from angriography, OCT + angiography, (specifically for CFD usage)
- statistical shape modelling, CFD mesh generation and surface unwrapping.
+ statistical shape modelling, CFD mesh generation, surface unwrapping and transfinite interpolation.
  
  IVOCT + Angiography fusion method is based off the following work:
 
@@ -21,7 +21,7 @@ Angiography data has been extracted via QAngio XA 3D RE,
 ![alt](./images/ssm.PNG)
 ## Surface Unwrapping
 ![alt](./images/unwrapping.PNG)
-## Mesh Reparameterization to Structured Domains
+## Mesh Reparameterization to Structured Domains Using Transfinite Interpolation
 ![alt](./images/mesh_reparameterization.PNG)
 
 # Installation
