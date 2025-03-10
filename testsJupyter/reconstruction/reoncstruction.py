@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
 
     %% [markdown]
-    # High Level API
+    # High Level
 
     # %%
     import pyvista as pv
